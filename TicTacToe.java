@@ -71,23 +71,33 @@ public class TicTacToe {
 
 	//This function is not finished.
 	public static void playing()
-	{
-			if(player == X)
-			{
-				System.out.println("It's your move Player X, valid move Row[0-2] Colum[0-2]: ");
-			}
-			else
-			{
-				System.out.println("It's your move Player O, valid move Row[0-2] Colum[0-2]: ");
-			}
-			//http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#nextInt()
-			int r = scanIn.nextInt();
-			int c = scanIn.nextInt();
+	{	
+		int r, c;
 
-			if(board[r][c] == Start)
-			{
-				board[r][c] = player;
-			}
+		if(player == X)
+		{
+			System.out.println("It's your move Player X, valid move Row[0-2] Colum[0-2]: ");
+		}
+		else
+		{
+			System.out.println("It's your move Player O, valid move Row[0-2] Colum[0-2]: ");
+		}
+
+		do
+		{	
+		//http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#nextInt()
+		r = scanIn.nextInt();
+		c = scanIn.nextInt();
+
+		if(board[r][c] == Start)
+		{
+			board[r][c] = player;
+		}
+		else
+		{
+			System.out.println("Not a valid move, please try again: ");
+		}
+		}while(board[r][c] != Start);
 	}
 
 }
