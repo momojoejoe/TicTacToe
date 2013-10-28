@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class TicTacToe {
 
 	public static final int ROWS = 3, COLUMS = 3;
@@ -5,21 +7,30 @@ public class TicTacToe {
 	public static final int X = 0;
 	public static final int O = 1;
 	public static final int Start = 2;
+	public static int player = 0; 
+
+	//http://www.mkyong.com/java/how-to-read-input-from-console-java/
+	public static Scanner scanIn = new Scanner(System.in);
 
 	public static void main(String[] args) {
+
 		System.out.println("-------------"); 
 		System.out.println("--TicTacToe--");
 		System.out.println("-------------");
 		System.out.println();
 
-		makeGame();
+		makeBoard();
 
-		board[2][1] = 0;
+		board[0][0] = X;
+		board[1][1] = X;
+		board[2][2] = X;
 
+		print();
+		playing();
 		print();
 	}
 
-	public static void makeGame()
+	public static void makeBoard()
 	{
 		for(int i = 0; i < ROWS; i++)
 		{
@@ -32,6 +43,8 @@ public class TicTacToe {
 
 	public static void print()
 	{
+		System.out.println("-------------");
+
 		for(int i = 0; i < ROWS; i++)
 		{
 			System.out.print("|");
@@ -55,4 +68,26 @@ public class TicTacToe {
 			System.out.println("-------------");
 		}
 	}
+
+	//This function is not finished.
+	public static void playing()
+	{
+			if(player == X)
+			{
+				System.out.println("It's your move Player X, valid move Row[0-2] Colum[0-2]: ");
+			}
+			else
+			{
+				System.out.println("It's your move Player O, valid move Row[0-2] Colum[0-2]: ");
+			}
+			//http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html#nextInt()
+			int r = scanIn.nextInt();
+			int c = scanIn.nextInt();
+
+			if(board[r][c] == Start)
+			{
+				board[r][c] = player;
+			}
+	}
+
 }
