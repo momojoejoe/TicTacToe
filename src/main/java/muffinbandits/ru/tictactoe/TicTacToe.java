@@ -110,13 +110,17 @@ public class TicTacToe {
 		int r, c;
 		boolean fool;
 
-		if(player == X)
+		while (true) {
+
+		if(player == 0)
 		{
-			System.out.println("It's your move " + p1.getName() + ", valid move Row[0-2] Colum[0-2]: ");
+			System.out.println("It's your move " + p1.getName() + ", (O) valid move Row[0-2] Colum[0-2]: ");
+			player = 1;
 		}
 		else
 		{
-			System.out.println("It's your move  "  + p1.getName() +" , valid move Row[0-2] Colum[0-2]: ");
+			System.out.println("It's your move  "  + p2.getName() +" , (X) valid move Row[0-2] Colum[0-2]: ");
+			player = 0;
 		}
 
 		do
@@ -139,6 +143,11 @@ public class TicTacToe {
 		if(board[r][c] == Start)
 		{
 			board[r][c] = player;
+			print();
+		} else {
+			System.out.println("Field already taken please try again");
+		}
+		
 		}
 	}
 
