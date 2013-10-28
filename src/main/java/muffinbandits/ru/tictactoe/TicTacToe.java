@@ -18,6 +18,10 @@ public class TicTacToe {
 	public static void main(String[] args)
 	{
 
+		Players p = new Players();
+
+		System.out.println(p.greet());
+		
 		System.out.println("-------------"); 
 		System.out.println("--TicTacToe--");
 		System.out.println("-------------");
