@@ -77,6 +77,7 @@ public class TicTacToe {
 	public static void playing()
 	{	
 		int r, c;
+		boolean fool;
 
 		if(player == X)
 		{
@@ -93,15 +94,23 @@ public class TicTacToe {
 		r = scanIn.nextInt();
 		c = scanIn.nextInt();
 
+		if(r > 2 || r < 0 || c > 2 || c < 0)
+		{
+			System.out.println("Not a valid move, please try again: ");
+			fool = false;
+		}
+		else
+		{
+			fool = true;
+		}
+		}while(fool != true);
+
 		if(board[r][c] == Start)
 		{
 			board[r][c] = player;
 		}
-		else
-		{
-			System.out.println("Not a valid move, please try again: ");
-		}
-		}while(board[r][c] != Start);
 	}
+
+
 
 }
