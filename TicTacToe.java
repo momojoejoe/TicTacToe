@@ -15,7 +15,7 @@ public class TicTacToe {
 	public static void main(String[] args) {
 
 		System.out.println("-------------"); 
-		System.out.println("--TicTacToe--");
+		System.out.println("--TicTacToes--");
 		System.out.println("-------------");
 		System.out.println();
 
