@@ -9,8 +9,10 @@ public class TicTacToe {
 	public static final int O = 1;
 	public static final int Start = 2;
 	public static int player = 0;
-	public static String p1Name = "Player1";
-	public static String p2Name = "Player2"; 
+
+	public static Players p1 = new Players();
+	public static Players p2 = new Players();
+
 
 	//http://www.mkyong.com/java/how-to-read-input-from-console-java/
 	public static Scanner scanIn = new Scanner(System.in);
@@ -18,10 +20,7 @@ public class TicTacToe {
 	public static void main(String[] args)
 	{
 
-		Players p = new Players();
 
-		System.out.println(p.greet());
-		
 		System.out.println("-------------"); 
 		System.out.println("--TicTacToe--");
 		System.out.println("-------------");
@@ -31,9 +30,9 @@ public class TicTacToe {
 
 		makeBoard();
 
-		board[0][0] = X;
-		board[1][1] = X;
-		board[2][2] = X;
+		// board[0][0] = X;
+		// board[1][1] = X;
+		// board[2][2] = X;
 
 		print();
 		playing();
@@ -42,17 +41,26 @@ public class TicTacToe {
 
 	public static void getPlayers() 
 	{
+		String p1Name = "Player1";
+		String p2Name = "Player2";
+
 		System.out.println("Player 1 what is your name ?");
 		p1Name = scanIn.nextLine();
+
 		if (p1Name.isEmpty()) {
 			p1Name = "Player1";
 		}
+
+		p1.setName(p1Name);
+		
 		System.out.println("Player 2 what is your name ?");
 		p2Name = scanIn.nextLine();
 
 		if (p2Name.isEmpty()) {
 			p2Name = "Player2";
 		}
+
+		p2.setName(p2Name);
 
 		System.out.println("Welcome "+ p1Name + " and " + p2Name);
 	}
@@ -104,11 +112,11 @@ public class TicTacToe {
 
 		if(player == X)
 		{
-			System.out.println("It's your move " + p1Name + ", valid move Row[0-2] Colum[0-2]: ");
+			System.out.println("It's your move " + p1.getName() + ", valid move Row[0-2] Colum[0-2]: ");
 		}
 		else
 		{
-			System.out.println("It's your move " + p2Name + " , valid move Row[0-2] Colum[0-2]: ");
+			System.out.println("It's your move  "  + p1.getName() +" , valid move Row[0-2] Colum[0-2]: ");
 		}
 
 		do
