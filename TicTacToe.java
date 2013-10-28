@@ -54,7 +54,7 @@ public class TicTacToe {
 				{
 					System.out.print(" X ");
 				}
-				else if(board[i][j] == 0)
+				else if(board[i][j] == O)
 				{	
 					System.out.print(" 0 ");
 				}
