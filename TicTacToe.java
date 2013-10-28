@@ -7,7 +7,9 @@ public class TicTacToe {
 	public static final int X = 0;
 	public static final int O = 1;
 	public static final int Start = 2;
-	public static int player = 0; 
+	public static int player = 0;
+	public static string p1Name = 'Player1';
+	public static string p2Name = 'Player2'; 
 
 	//http://www.mkyong.com/java/how-to-read-input-from-console-java/
 	public static Scanner scanIn = new Scanner(System.in);
@@ -18,6 +20,8 @@ public class TicTacToe {
 		System.out.println("--TicTacToe--");
 		System.out.println("-------------");
 		System.out.println();
+
+
 
 		makeBoard();
 
