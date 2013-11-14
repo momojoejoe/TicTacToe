@@ -1,4 +1,6 @@
 package muffinbandits.ru.tictactoe;
+import static spark.Spark.*;
+import spark.*;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -21,22 +23,38 @@ public class TicTacToe {
 	{
 
 
-		System.out.println("-------------"); 
-		System.out.println("--TicTacToe--");
-		System.out.println("-------------");
-		System.out.println();
 
-		getPlayers();
+		get(new Route("/hello") {
+         @Override
+         public Object handle(Request request, Response response) {
+            return "<a href='newgame'>Nyr leikur</a>";
+         }
+      });
 
-		makeBoard();
+		get(new Route("/newgame") {
+         @Override
+         public Object handle(Request request, Response response) {
+            return "<h1>Teiknabord</h1>";
+         }
+      });
 
-		// board[0][0] = X;
-		// board[1][1] = X;
-		// board[2][2] = X;
 
-		print();
-		playing();
-		print();
+		// System.out.println("-------------"); 
+		// System.out.println("--TicTacToe--");
+		// System.out.println("-------------");
+		// System.out.println();
+
+		// getPlayers();
+
+		// makeBoard();
+
+		// // board[0][0] = X;
+		// // board[1][1] = X;
+		// // board[2][2] = X;
+
+		// print();
+		// playing();
+		// print();
 	}
 
 	public static void getPlayers() 
