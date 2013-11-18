@@ -18,4 +18,11 @@ public class PlayersTest {
 		p1.setPlayerId(2);
 		assertEquals(2, p1.getPlayerId());
 	}
+
+	@Test
+	public void testPlayerName() {
+		Players p1 = new Players();
+		p1.setName("Sindri");
+		assertEquals("Sindri", p1.getName());
+	}
 }
