@@ -15,20 +15,20 @@
     padding: 50px;
     border: 5px solid black;
     font-size:50px;
-}
-.red {
+  }
+  .red {
     color: red;
-}
-.blue {
+  }
+  .blue {
     color: blue;
-}
+  }
 
-#p1 {
-  margin-left: 16px;
-}
-#p2 {
-    margin-left:180px;
-}
+  #p1 {
+    margin-left: 16px;
+  }
+  #p2 {
+    margin-left:107px;
+  }
 </style>
 
   </head>
@@ -57,19 +57,19 @@
 <table id ="tictactoe">
     <tbody>
         <tr>
-            <td id="cell1">&nbsp;</td>
-            <td id="cell2">&nbsp;</td>
-            <td id="cell3">&nbsp;</td>
+            <td id="0,0">&nbsp;</td>
+            <td id="0,1">&nbsp;</td>
+            <td id="0,2">&nbsp;</td>
         </tr>
         <tr>
-            <td id="cell4">&nbsp;</td>
-            <td id="cell5">&nbsp;</td>
-            <td id="cell6">&nbsp;</td>
+            <td id="1,0">&nbsp;</td>
+            <td id="1,1">&nbsp;</td>
+            <td id="1,2">&nbsp;</td>
         </tr>
         <tr>
-            <td id="cell7">&nbsp;</td>
-            <td id="cell8">&nbsp;</td>
-            <td id="cell9">&nbsp;</td>
+            <td id="2,0">&nbsp;</td>
+            <td id="2,1">&nbsp;</td>
+            <td id="2,2">&nbsp;</td>
         </tr>
       
     </tbody>
@@ -96,7 +96,6 @@
           url: form.attr('action'),
           data: 'a=' + a + '&b=' + b
         }).done(function(sum) {
-          console.log(sum);
 
           if (sum) {
             //senda  a /newgame og byrja leik
@@ -109,10 +108,29 @@
 
           // $('#results').html(a + ' + ' + b + ' = ' + sum).attr('class', 'alert alert-success');
         }).fail(function() {
-          $('#results').html('Villa kom upp við að leggja saman "' + a + ' + ' + b + '"').attr('class', 'alert alert-danger');
+          $('#results').html('ERROR!').attr('class', 'alert alert-danger');
         });
         e.preventDefault();
       });
+
+      $('td').click( function() {
+        // console.log(this.id);
+
+        var player = "1";
+        var cell = this.id;
+        $.ajax({
+          type: "post",
+          url: "/play",
+          data: 'player=' + player + '&cellId=' + cell
+        }).done(function(result) {
+          console.log(result);
+
+        }).fail(function() {
+          console.log("error");
+        })
+
+      });
+
     });
     </script>
   </body>

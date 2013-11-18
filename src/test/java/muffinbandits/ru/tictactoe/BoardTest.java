@@ -9,13 +9,16 @@ public class BoardTest {
 	@Test
 	public void testisLegal() {
 
-		assertEquals(true, Board.isLegal(2,2));
+		assertEquals(true, Board.isLegal(2));
 		// assertEquals(false, checkIfLegalMove(0,3));
 	}
 
-	// @Test
-	// public void checkiflegal2() {
+	@Test
+	public void testCord() {
 
-	// 	assertEquals(false, checkIfLegalMove(0,3));
-	// }
+		assertEquals(1, Board.getXCord("1,0"));
+		assertEquals(0, Board.getYCord("1,0"));
+	}
+
+	
 }

@@ -21,7 +21,6 @@ public class TicTacToe {
 
 	public static void main(String[] args)
 	{
-
 		
     staticFileLocation("/public");
         
@@ -44,6 +43,20 @@ public class TicTacToe {
                 p2.setName(b);
 
                 return true;
+            }
+        });
+
+
+         post(new Route("/play") {
+            @Override
+            public Object handle(Request request, Response response) {
+                String player = String.valueOf(request.queryParams("a"));
+                String cell = String.valueOf(request.queryParams("cellId"));
+
+                
+
+
+                return cell;
             }
         });
 
