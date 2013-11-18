@@ -2,34 +2,39 @@ package muffinbandits.ru.tictactoe;
 
 public class Board {
 
-	// public static int X = 0;
-	// public static int Y = 0;
+	private static int X = 0;
+	private static int Y = 0;
 
 
-	public static int getXCord(String cellId) {
+	public static void setXcord(String cellId) {
 
 		String[] a = cellId.split(",");
 
-		int x = Integer.parseInt(a[0]);
-		// Y = Integer.parseInt(a[1]);
-		if (!isLegal(x)) {
-			return -1;
-		}
+		X = Integer.parseInt(a[0]);
 
-		return x;
+		if (!isLegal(X)) {
+			throw new IllegalArgumentException("X cord not allowed");
+		}
+		
 	}
 
-		public static int getYCord(String cellId) {
+		public static void setYcord(String cellId) {
 
 		String[] a = cellId.split(",");
 
-		int y = Integer.parseInt(a[1]);
-		// Y = Integer.parseInt(a[1]);
-		if (!isLegal(y)) {
-			return -1;
+		Y = Integer.parseInt(a[1]);
+
+		if (!isLegal(Y)) {
+			throw new IllegalArgumentException("Y cord not allowed");
 		}
 
-		return y;
+	}
+
+	public int getXcord() {
+		return X;
+	}
+	public int getYcord() {
+		return Y;
 	}
 
 	public static boolean isLegal(int x) {

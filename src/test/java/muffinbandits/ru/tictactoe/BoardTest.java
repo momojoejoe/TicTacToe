@@ -10,14 +10,20 @@ public class BoardTest {
 	public void testisLegal() {
 
 		assertEquals(true, Board.isLegal(2));
+		assertEquals(false, Board.isLegal(-2));
 		// assertEquals(false, checkIfLegalMove(0,3));
 	}
 
 	@Test
 	public void testCord() {
 
-		assertEquals(1, Board.getXCord("1,0"));
-		assertEquals(0, Board.getYCord("1,0"));
+		Board b = new Board();
+
+		b.setYcord("1,0");
+		b.setXcord("1,0");
+		assertEquals(1, b.getXcord());
+		assertEquals(0, b.getYcord());
+
 	}
 
 	
