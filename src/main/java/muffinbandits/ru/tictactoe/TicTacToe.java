@@ -26,7 +26,7 @@ public class TicTacToe {
         post(new Route("/add") {
             @Override
             public Object handle(Request request, Response response) {
-            	
+
             	b.makeBoard();
                 String a = String.valueOf(request.queryParams("a"));
                 String b = String.valueOf(request.queryParams("b"));
@@ -39,7 +39,10 @@ public class TicTacToe {
                 }
 
                 p1.setName(a);
+                p1.setPlayerId(0);
+                
                 p2.setName(b);
+                p2.setPlayerId(1);
 
                 
 

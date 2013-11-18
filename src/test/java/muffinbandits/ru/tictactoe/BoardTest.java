@@ -44,5 +44,13 @@ public class BoardTest {
 		assertEquals(0, b1.getYcord());
 	}
 
+	@Test
+	public void testLegalPlayer() {
+		assertEquals(true, Board.isLegalPlayer(1));
+		assertEquals(true, Board.isLegalPlayer(0));
+		assertEquals(false, Board.isLegalPlayer(2));
+		assertEquals(false, Board.isLegalPlayer(-1));
+	}
+
 	
 }

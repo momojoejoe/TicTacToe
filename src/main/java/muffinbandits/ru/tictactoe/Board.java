@@ -23,12 +23,35 @@ public class Board {
 	}
 
 
-	public static void makeMove(String player, String cellId) {
+	public static void makeMove(String playerId, String cellId) {
 
 		setYcord(cellId);
 		setXcord(cellId);
 
+		int tempX = getXcord();
+		int tempY = getYcord();
 
+		player = Integer.parseInt(playerId);
+
+		if (isLegalPlayer(player)) {
+
+			if (board[tempX][tempY] == Start) {
+
+				if (player == 0) {
+			
+					board[tempX][tempY] = 0;
+				} else if (player == 1) {
+
+					board[tempX][tempY] = 1;
+				}
+
+			} else {
+				//occupied
+				}
+				
+		} else {
+		//not legal player
+	}
 
 	}
 
@@ -56,10 +79,10 @@ public class Board {
 
 	}
 
-	public int getXcord() {
+	public static int getXcord() {
 		return X;
 	}
-	public int getYcord() {
+	public static int getYcord() {
 		return Y;
 	}
 
@@ -70,5 +93,14 @@ public class Board {
 		} 
 		return true;
 	}
+
+	public static boolean isLegalPlayer(int p) {
+
+		if (p == 0 || p == 1) {
+			return true;
+		}
+		return false;
+	}
+
 
 }
