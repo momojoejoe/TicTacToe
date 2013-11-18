@@ -26,5 +26,23 @@ public class BoardTest {
 
 	}
 
+	//testa exception
+	@Test(expected = Exception.class)
+	public void testCordExcept() {
+
+		Board b1 = new Board();
+		Board b2 = new Board();
+
+		b2.setXcord("0,4");
+		b2.setYcord("0,4");
+		assertEquals(0, b2.getXcord());
+		assertEquals("Y cord not allowed", b2.getYcord());
+
+		b1.setXcord("3,0");
+		b1.setYcord("3,0");
+		assertEquals("X cord not allowed", b1.getXcord());
+		assertEquals(0, b1.getYcord());
+	}
+
 	
 }
