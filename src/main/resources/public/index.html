@@ -54,6 +54,7 @@
     </div>
 
 <div id="board">
+  <span id="turn">0</span>
 <table id ="tictactoe">
     <tbody>
         <tr>
@@ -116,12 +117,12 @@
       $('td').click( function() {
         // console.log(this.id);
 
-        var player = "0";
+        var player = $('#turn');
         var cell = this;
         $.ajax({
           type: "post",
           url: "/play",
-          data: 'player=' + player + '&cellId=' + cell.id
+          data: 'player=' + player.html() + '&cellId=' + cell.id
         }).done(function(result) {
           // console.log(result);
           //teikna a borddid videigandai takn og skipta um player ef vid a
@@ -133,18 +134,19 @@
             if(r[1] === '0') {
               //teikna X
               $(cell).html("X");
-              player = r[1];
+              console.log(r[1]);
+              player.html("1");
 
             } else if (r[1] === '1') {
               //teikna O
               $(cell).html("O");
-              player = r[1];
+              player.html("0");
 
             }
 
           } else if (r[0] === 'no') {
             //do again
-            player = r[1];
+            player.html($("#turn").html());
           } else if (r[0] === 'win') {
             //skrifa sigurvegara
             console.log("winner is " + r[1]);

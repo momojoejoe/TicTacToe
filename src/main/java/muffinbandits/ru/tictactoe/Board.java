@@ -41,12 +41,12 @@ public class Board {
 			
 					board[tempX][tempY] = 0;
 					//skila done og nyja playerId (1)
-					return "ok,1";
+					return "ok,0";
 				} else if (player == 1) {
 
 					board[tempX][tempY] = 1;
 					//skila done og nyja playerId
-					return "ok,0";
+					return "ok,1";
 				}
 
 			} else {
