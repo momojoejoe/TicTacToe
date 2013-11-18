@@ -22,16 +22,30 @@ public class TicTacToe {
 	public static void main(String[] args)
 	{
 
+
+
+		
     staticFileLocation("/public");
         
-        // setPort(Integer.valueOf(System.getenv("PORT"))); // broken!?!?
+        // setPort(Integer.valueOf(System.getenv("PORT"))); // broken!
 
         post(new Route("/add") {
             @Override
             public Object handle(Request request, Response response) {
-                Integer a = Integer.valueOf(request.queryParams("a"));
-                Integer b = Integer.valueOf(request.queryParams("b"));
-                return a + b;
+                String a = String.valueOf(request.queryParams("a"));
+                String b = String.valueOf(request.queryParams("b"));
+
+                if (a == "") {
+                	p1.setName("Player1");
+                }
+                if (b == "") {
+                	p2.setName("Player2");
+                }
+
+                p1.setName(a);
+                p2.setName(b);
+
+                return true;
             }
         });
 

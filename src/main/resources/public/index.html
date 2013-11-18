@@ -7,12 +7,38 @@
 
     <!-- load bootstrap for nicer ui -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+    <style>
+    #tictactoe tbody tr td {
+
+    background-color: white;
+    padding: 50px;
+    border: 5px solid black;
+    font-size:50px;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+
+#p1 {
+  margin-left: 16px;
+}
+#p2 {
+    margin-left:180px;
+}
+</style>
+
   </head>
   <body>
 
     <div class="container">
       <h1>Welcome!</h1>
+      <span id="p1"></span><span id="p2"></span>
 
+      <div id="theForm">
       <p>Please type in your names to start.</p>
 
       <form method="post" action="/add" class="form-inline" role="form">
@@ -25,9 +51,34 @@
         <button type="submit" class="btn btn-default">New Game</button>
       </form>
       <hr>
-      <div id="results">
-      </div>
     </div>
+
+<div id="board">
+<table id ="tictactoe">
+    <tbody>
+        <tr>
+            <td id="cell1">&nbsp;</td>
+            <td id="cell2">&nbsp;</td>
+            <td id="cell3">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="cell4">&nbsp;</td>
+            <td id="cell5">&nbsp;</td>
+            <td id="cell6">&nbsp;</td>
+        </tr>
+        <tr>
+            <td id="cell7">&nbsp;</td>
+            <td id="cell8">&nbsp;</td>
+            <td id="cell9">&nbsp;</td>
+        </tr>
+      
+    </tbody>
+</table>
+
+  </div>
+
+      </div>
+
 
     <!-- load jquery -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -35,6 +86,7 @@
     <!-- use ajax to submit form, retreive the result and display on the page -->
     <script>
     $(document).ready(function() {
+      $('#board').hide();
       var form = $('form');
       form.submit(function(e) {
         var a = $("#a").val();
@@ -44,7 +96,18 @@
           url: form.attr('action'),
           data: 'a=' + a + '&b=' + b
         }).done(function(sum) {
-          $('#results').html(a + ' + ' + b + ' = ' + sum).attr('class', 'alert alert-success');
+          console.log(sum);
+
+          if (sum) {
+            //senda  a /newgame og byrja leik
+            $('#board').show();
+            $('#theForm').hide();
+            $('.container h1').html('Enjoy');
+            $('#p1').html("Player1: <strong>" + a + "</strong>");
+            $('#p2').html("Player2: <strong>" + b + "</strong>");
+          } 
+
+          // $('#results').html(a + ' + ' + b + ' = ' + sum).attr('class', 'alert alert-success');
         }).fail(function() {
           $('#results').html('Villa kom upp við að leggja saman "' + a + ' + ' + b + '"').attr('class', 'alert alert-danger');
         });
