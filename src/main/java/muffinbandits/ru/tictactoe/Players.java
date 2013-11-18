@@ -9,7 +9,7 @@ public class Players {
 		return "Hello sir";
 	}
 
-	public String getName() {
+	public  String getName() {
 		return name;
 	}
 

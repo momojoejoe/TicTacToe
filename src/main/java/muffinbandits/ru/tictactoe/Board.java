@@ -23,7 +23,7 @@ public class Board {
 	}
 
 
-	public static void makeMove(String playerId, String cellId) {
+	public static String makeMove(int playerId, String cellId) {
 
 		setYcord(cellId);
 		setXcord(cellId);
@@ -31,7 +31,7 @@ public class Board {
 		int tempX = getXcord();
 		int tempY = getYcord();
 
-		player = Integer.parseInt(playerId);
+		player = playerId;
 
 		if (isLegalPlayer(player)) {
 
@@ -40,18 +40,25 @@ public class Board {
 				if (player == 0) {
 			
 					board[tempX][tempY] = 0;
+					//skila done og nyja playerId (1)
+					return "ok,1";
 				} else if (player == 1) {
 
 					board[tempX][tempY] = 1;
+					//skila done og nyja playerId
+					return "ok,0";
 				}
 
 			} else {
-				//occupied
+				//occupied skila false og sama playerId
+				return "no," + playerId;
 				}
-				
+
 		} else {
-		//not legal player
+		//not legal player throw exception!
+			return "error";
 	}
+	return "foo";
 
 	}
 

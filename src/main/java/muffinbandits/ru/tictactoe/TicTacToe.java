@@ -40,7 +40,7 @@ public class TicTacToe {
 
                 p1.setName(a);
                 p1.setPlayerId(0);
-                
+
                 p2.setName(b);
                 p2.setPlayerId(1);
 
@@ -54,12 +54,21 @@ public class TicTacToe {
          post(new Route("/play") {
             @Override
             public Object handle(Request request, Response response) {
-                String player = String.valueOf(request.queryParams("a"));
+                String player = String.valueOf(request.queryParams("player"));
                 String cell = String.valueOf(request.queryParams("cellId"));
+                String result = "";
 
-                b.makeMove(player, cell);
+                int pId = Integer.parseInt(player);
 
-                return cell;
+                if (pId == 0) {
+                	result = b.makeMove(0, cell);
+
+                } else if (pId == 1) {
+                	result = b.makeMove(1, cell);
+                }
+
+
+                return result;
             }
         });
 

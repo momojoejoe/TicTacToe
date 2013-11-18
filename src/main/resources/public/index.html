@@ -117,13 +117,44 @@
         // console.log(this.id);
 
         var player = "0";
-        var cell = this.id;
+        var cell = this;
         $.ajax({
           type: "post",
           url: "/play",
-          data: 'player=' + player + '&cellId=' + cell
+          data: 'player=' + player + '&cellId=' + cell.id
         }).done(function(result) {
-          console.log(result);
+          // console.log(result);
+          //teikna a borddid videigandai takn og skipta um player ef vid a
+          var r = result.split(",");
+          console.log(r);
+
+          if (r[0] === 'ok') {
+
+            if(r[1] === '0') {
+              //teikna X
+              $(cell).html("X");
+              player = r[1];
+
+            } else if (r[1] === '1') {
+              //teikna O
+              $(cell).html("O");
+              player = r[1];
+
+            }
+
+          } else if (r[0] === 'no') {
+            //do again
+            player = r[1];
+          } else if (r[0] === 'win') {
+            //skrifa sigurvegara
+            console.log("winner is " + r[1]);
+
+          } else {
+            console.log("unknown error");
+          }
+
+
+
 
         }).fail(function() {
           console.log("error");
