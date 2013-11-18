@@ -5,15 +5,10 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-	public static final int ROWS = 3, COLUMS = 3;
-	public static final int[][] board = new int[ROWS][COLUMS];
-	public static final int X = 0;
-	public static final int O = 1;
-	public static final int Start = 2;
-	public static int player = 0;
 
 	public static Players p1 = new Players();
 	public static Players p2 = new Players();
+	public static Board b = new Board();
 
 
 	//http://www.mkyong.com/java/how-to-read-input-from-console-java/
@@ -21,6 +16,8 @@ public class TicTacToe {
 
 	public static void main(String[] args)
 	{
+
+
 		
     staticFileLocation("/public");
         
@@ -29,6 +26,8 @@ public class TicTacToe {
         post(new Route("/add") {
             @Override
             public Object handle(Request request, Response response) {
+            	
+            	b.makeBoard();
                 String a = String.valueOf(request.queryParams("a"));
                 String b = String.valueOf(request.queryParams("b"));
 
@@ -42,6 +41,8 @@ public class TicTacToe {
                 p1.setName(a);
                 p2.setName(b);
 
+                
+
                 return true;
             }
         });
@@ -53,8 +54,7 @@ public class TicTacToe {
                 String player = String.valueOf(request.queryParams("a"));
                 String cell = String.valueOf(request.queryParams("cellId"));
 
-                
-
+                b.makeMove(player, cell);
 
                 return cell;
             }
