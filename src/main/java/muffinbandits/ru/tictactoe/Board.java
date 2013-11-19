@@ -25,7 +25,7 @@ public class Board {
     String dbUrl = "jdbc:mysql://46.149.30.141:3306/muff";
     String dbClass = "com.mysql.jdbc.Driver";
     String query = "Select * from band";
-    String username = "root";
+    String username = "muffin";
     String password = "muffin";
    
 
