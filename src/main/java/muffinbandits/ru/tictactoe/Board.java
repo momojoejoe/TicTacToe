@@ -22,7 +22,7 @@ public class Board {
 
 
 	public void testConnect() {
-    String dbUrl = "jdbc:mysql://localhost/muff";
+    String dbUrl = "jdbc:mysql://46.149.30.141:3306/muff";
     String dbClass = "com.mysql.jdbc.Driver";
     String query = "Select * from band";
     String username = "root";
