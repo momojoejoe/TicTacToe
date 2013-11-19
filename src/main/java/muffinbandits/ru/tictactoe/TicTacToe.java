@@ -18,7 +18,7 @@ public class TicTacToe {
 	{
 		Board foo = new Board();
 		System.out.println("Tryin to connect");
-		foo.testConnect();
+		foo.makeConnection();
 		System.out.println("Connection done");
 		
     staticFileLocation("/public");
