@@ -10,6 +10,7 @@ public class Board {
 
 	private static int X = 0;
 	private static int Y = 0;
+	private static int turns = 0;
 
 
 	public static void makeBoard() {
@@ -36,15 +37,48 @@ public class Board {
 		if (isLegalPlayer(player)) {
 
 			if (board[tempX][tempY] == Start) {
+				turns++;
 
 				if (player == 0) {
-			
+					
 					board[tempX][tempY] = 0;
+					if(turns == 9)
+					{
+						if(checkwinner(0))
+						{
+							return "win,0";
+						}
+						else
+						{
+							return "draw,0";
+						}
+					}
+					else if (checkwinner(0))
+					{
+						return "win,0";
+					}
+
 					//skila done og nyja playerId (1)
 					return "ok,0";
 				} else if (player == 1) {
 
 					board[tempX][tempY] = 1;
+					if(turns == 9)
+					{
+						if(checkwinner(1))
+						{
+							return "win,1";
+						}
+						else
+						{
+							return "draw,1";
+						}
+					}
+					else if(checkwinner(1))
+					{
+						return "win,1";
+					}
+					
 					//skila done og nyja playerId
 					return "ok,1";
 				}
@@ -106,6 +140,33 @@ public class Board {
 		if (p == 0 || p == 1) {
 			return true;
 		}
+		return false;
+	}
+
+	public static boolean checkwinner(int player)
+	{
+		if(board[0][0] == player && board[1][1] == player && board[2][2] == player || board[0][2] == player && board[1][1] == player && board[2][0] == player)
+		{
+			return true;
+		}
+		else
+		{
+			for(int i = 0; i < ROWS ; i++)
+			{
+				for(int j = 0; j < COLUMS ; j++)
+				{
+					if(board[i][0] == player && board[i][1] == player && board[i][2] == player)
+					{
+						return true;
+					}
+					else if(board[0][j] == player && board[1][j] == player && board[2][j] == player)
+					{
+						return true;
+					}
+				}
+			}
+		}
+		
 		return false;
 	}
 
