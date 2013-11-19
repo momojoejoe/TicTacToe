@@ -12,6 +12,4 @@ sigruns12
 sindri12
 theodor11
 
-
-trying travis
-
+[![Build Status](https://travis-ci.org/[sindris12][TicTacToe].png)](http://travis-ci.org[sindris12]/[TicTacToe])
