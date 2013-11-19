@@ -52,5 +52,18 @@ public class BoardTest {
 		assertEquals(false, Board.isLegalPlayer(-1));
 	}
 
+	@Test
+	public void testWinner() {
+		Board b3 = new Board();
+
+
+
+		b3.makeMove(0,"0,0");
+		b3.makeMove(0,"1,1");
+		b3.makeMove(0,"2,2");
+
+		assertEquals(true, b3.checkwinner(0));
+	}
+
 	
 }

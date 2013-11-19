@@ -149,6 +149,18 @@
             player.html($("#turn").html());
           } else if (r[0] === 'win') {
             //skrifa sigurvegara
+            if(r[1] === '0') {
+              //teikna X
+              $(cell).html("X");
+              console.log(r[1]);
+              player.html("1");
+
+            } else if (r[1] === '1') {
+              //teikna O
+              $(cell).html("O");
+              player.html("0");
+
+            }
             console.log("winner is " + r[1]);
 
           } else {
