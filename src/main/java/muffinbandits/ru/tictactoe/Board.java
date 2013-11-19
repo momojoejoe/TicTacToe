@@ -19,6 +19,10 @@ public class Board {
 	private static int turns = 0;
 	private static int boardId =  0;
 
+	public static String dbUrl = "jdbc:mysql://46.149.30.141:3306/muff";
+	public static String dbClass = "com.mysql.jdbc.Driver";
+	public static String username = "muffin";
+    public static String password = "muffin";
 
 
 	public void testConnect() {
@@ -28,18 +32,22 @@ public class Board {
     String username = "muffin";
     String password = "muffin";
    
+	public static void makeConnection() {
+    
+    String query = "Select gameId from Gameinstances";
+
 
        try {
 
         Class.forName(dbClass);
-        Connection connection = DriverManager.getConnection(dbUrl,
-            username, password);
+        Connection connection = DriverManager.getConnection(dbUrl, username, password);
         Statement statement = connection.createStatement();
         ResultSet resultSet = statement.executeQuery(query);
         while (resultSet.next()) {
-        String tableName = resultSet.getString(1);
+        String tableName = resultSet.getString(2);
         System.out.println("Table name : " + tableName);
         }
+
         connection.close();
     } catch (ClassNotFoundException e) {
         e.printStackTrace();
@@ -55,18 +63,9 @@ public class Board {
 
 
 
-
-
-
-
-
-
-
-
-
 	public static void makeBoard() {
 
-		// this.boardId = qBid + 1;
+
 
     	for(int i = 0; i < ROWS; i++) {
 

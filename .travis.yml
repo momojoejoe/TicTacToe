@@ -3,4 +3,10 @@ jdk: openjdk7
 install: bin/fresh
 notifications:
   email: false
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
+  app: fast-falls-7155
+  on:
+    repo: MuffinBandits/TicTacToe
