@@ -20,7 +20,7 @@ public class TicTacToe {
 		
     staticFileLocation("/public");
         
-         setPort(Integer.valueOf(System.getenv("PORT"))); // broken!
+        // setPort(Integer.valueOf(System.getenv("PORT"))); // broken!
 
         post(new Route("/add") {
             @Override
