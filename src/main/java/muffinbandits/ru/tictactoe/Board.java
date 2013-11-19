@@ -1,5 +1,11 @@
 package muffinbandits.ru.tictactoe;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class Board {
 
 	public static final int ROWS = 3, COLUMS = 3;
@@ -11,9 +17,56 @@ public class Board {
 	private static int X = 0;
 	private static int Y = 0;
 	private static int turns = 0;
+	private static int boardId =  0;
+
+
+
+	public void testConnect() {
+    String dbUrl = "jdbc:mysql://localhost/muff";
+    String dbClass = "com.mysql.jdbc.Driver";
+    String query = "Select * from band";
+    String username = "root";
+    String password = "muffin";
+   
+
+       try {
+
+        Class.forName(dbClass);
+        Connection connection = DriverManager.getConnection(dbUrl,
+            username, password);
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery(query);
+        while (resultSet.next()) {
+        String tableName = resultSet.getString(1);
+        System.out.println("Table name : " + tableName);
+        }
+        connection.close();
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	public static void makeBoard() {
+
+		// this.boardId = qBid + 1;
 
     	for(int i = 0; i < ROWS; i++) {
 

@@ -16,7 +16,10 @@ public class TicTacToe {
 
 	public static void main(String[] args)
 	{
-
+		Board foo = new Board();
+		System.out.println("Tryin to connect");
+		foo.testConnect();
+		System.out.println("Connection done");
 		
     staticFileLocation("/public");
         
@@ -25,7 +28,7 @@ public class TicTacToe {
         post(new Route("/add") {
             @Override
             public Object handle(Request request, Response response) {
-
+            	Board b1 = new Board();
             	b.makeBoard();
                 String a = String.valueOf(request.queryParams("a"));
                 String b = String.valueOf(request.queryParams("b"));
