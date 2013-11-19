@@ -12,6 +12,4 @@ sigruns12
 sindri12
 theodor11
 
-
-trying travis
-
+Travis Test status: [![Build Status](https://travis-ci.org/MuffinBandits/TicTacToe)](https://travis-ci.org/MuffinBandits/TicTacToe)
