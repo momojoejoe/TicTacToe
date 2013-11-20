@@ -56,65 +56,65 @@ public class BoardTest {
 	public void testWinnerP1() {
 		Board b3 = new Board();
 
-		b3.makeMove(0,"0,0");
-		b3.makeMove(0,"1,1");
-		b3.makeMove(0,"2,2");
+		b3.makeMove(0, "0,0");
+		b3.makeMove(0, "1,1");
+		b3.makeMove(0, "2,2");
 
 		
 	
 		Board b4 = new Board();
 
-		b4.makeMove(0,"0,2");		
-		b4.makeMove(0,"1,1");
-		b4.makeMove(0,"2,0");
+		b4.makeMove(0, "0,2");		
+		b4.makeMove(0, "1,1");
+		b4.makeMove(0, "2,0");
 
 		
 
 		Board b5 = new Board();
 
-		b5.makeMove(0,"0,0");		
-		b5.makeMove(0,"1,0");
-		b5.makeMove(0,"2,0");
+		b5.makeMove(0, "0,0");		
+		b5.makeMove(0, "1,0");
+		b5.makeMove(0, "2,0");
 
 		
 
 		Board b6 = new Board();
 
-		b6.makeMove(0,"0,1");		
-		b6.makeMove(0,"1,1");
-		b6.makeMove(0,"2,1");
+		b6.makeMove(0, "0,1");		
+		b6.makeMove(0, "1,1");
+		b6.makeMove(0, "2,1");
 
 		
 	
 		Board b7 = new Board();
 
-		b7.makeMove(0,"0,2");		
-		b7.makeMove(0,"1,2");
-		b7.makeMove(0,"2,2");
+		b7.makeMove(0, "0,2");		
+		b7.makeMove(0, "1,2");
+		b7.makeMove(0, "2,2");
 
 		
 		
 		Board b8 = new Board();
 
-		b8.makeMove(0,"0,0");		
-		b8.makeMove(0,"0,1");
-		b8.makeMove(0,"0,2");
+		b8.makeMove(0, "0,0");		
+		b8.makeMove(0, "0,1");
+		b8.makeMove(0, "0,2");
 
 		
 
 		Board b9 = new Board();
 
-		b9.makeMove(0,"1,0");		
-		b9.makeMove(0,"1,1");
-		b9.makeMove(0,"1,2");
+		b9.makeMove(0, "1,0");		
+		b9.makeMove(0, "1,1");
+		b9.makeMove(0, "1,2");
 
 		
 
 		Board b10 = new Board();
 
-		b10.makeMove(0,"2,0");		
-		b10.makeMove(0,"2,1");
-		b10.makeMove(0,"2,2");
+		b10.makeMove(0, "2,0");		
+		b10.makeMove(0, "2,1");
+		b10.makeMove(0, "2,2");
 
 		assertEquals(true, b3.checkWinner(0));
 		assertEquals(true, b4.checkWinner(0));
@@ -131,71 +131,71 @@ public class BoardTest {
 	public void testWinnerP2() {
 		Board b31 = new Board();
 
-		b31.makeMove(1,"0,0");
-		b31.makeMove(1,"1,1");
-		b31.makeMove(1,"2,2");
+		b31.makeMove(1, "0,0");
+		b31.makeMove(1, "1,1");
+		b31.makeMove(1, "2,2");
 
 
 
-		b31.makeMove(1,"0,0");
-		b31.makeMove(1,"1,1");
-		b31.makeMove(1,"2,2");
+		b31.makeMove(1, "0,0");
+		b31.makeMove(1, "1,1");
+		b31.makeMove(1, "2,2");
 
 		
 	
 		Board b41 = new Board();
 
-		b41.makeMove(1,"0,2");		
-		b41.makeMove(1,"1,1");
-		b41.makeMove(1,"2,0");
+		b41.makeMove(1, "0,2");		
+		b41.makeMove(1, "1,1");
+		b41.makeMove(1, "2,0");
 
 		
 
 		Board b51 = new Board();
 
-		b51.makeMove(1,"0,0");		
-		b51.makeMove(1,"1,0");
-		b51.makeMove(1,"2,0");
+		b51.makeMove(1, "0,0");		
+		b51.makeMove(1, "1,0");
+		b51.makeMove(1, "2,0");
 
 		
 
 		Board b61 = new Board();
 
-		b61.makeMove(1,"0,1");		
-		b61.makeMove(1,"1,1");
-		b61.makeMove(1,"2,1");
+		b61.makeMove(1, "0,1");		
+		b61.makeMove(1, "1,1");
+		b61.makeMove(1, "2,1");
 
 		
 	
 		Board b71 = new Board();
 
-		b71.makeMove(1,"0,2");		
-		b71.makeMove(1,"1,2");
-		b71.makeMove(1,"2,2");
+		b71.makeMove(1, "0,2");		
+		b71.makeMove(1, "1,2");
+		b71.makeMove(1, "2,2");
 
 		
 		
 		Board b81 = new Board();
 
-		b81.makeMove(1,"0,0");		
-		b81.makeMove(1,"0,1");
-		b81.makeMove(1,"0,2");
+		b81.makeMove(1, "0,0");		
+		b81.makeMove(1, "0,1");
+		b81.makeMove(1, "0,2");
 
 		
 
 		Board b91 = new Board();
 
-		b91.makeMove(1,"1,0");		
-		b91.makeMove(1,"1,1");
-		b91.makeMove(1,"1,2");
+		b91.makeMove(1, "1,0");		
+		b91.makeMove(1, "1,1");
+		b91.makeMove(1, "1,2");
 
 		
 
 		Board b101 = new Board();
 
-		b101.makeMove(1,"2,0");		
-		b101.makeMove(1,"2,1");
-		b101.makeMove(1,"2,2");
+		b101.makeMove(1, "2,0");		
+		b101.makeMove(1, "2,1");
+		b101.makeMove(1, "2,2");
 
 		
 
@@ -211,43 +211,43 @@ public class BoardTest {
 	}
 
 	@Test
-	public void drawTest()
-	{
+	public void drawTest() {
+
 		Board bdraw = new Board();
 
-		bdraw.makeMove(0,"0,0");
-		bdraw.makeMove(1,"0,1");
-		bdraw.makeMove(0,"0,2");
-		bdraw.makeMove(1,"1,0");
-		bdraw.makeMove(0,"1,2");
-		bdraw.makeMove(1,"2,2");
-		bdraw.makeMove(0,"2,0");
-		bdraw.makeMove(1,"1,1");
-		bdraw.makeMove(0,"2,1");
+		bdraw.makeMove(0, "0,0");
+		bdraw.makeMove(1, "0,1");
+		bdraw.makeMove(0, "0,2");
+		bdraw.makeMove(1, "1,0");
+		bdraw.makeMove(0, "1,2");
+		bdraw.makeMove(1, "2,2");
+		bdraw.makeMove(0, "2,0");
+		bdraw.makeMove(1, "1,1");
+		bdraw.makeMove(0, "2,1");
 
-		assertEquals(false,bdraw.checkWinner(0));
-		assertEquals(false,bdraw.checkWinner(1));
-		assertEquals(true,bdraw.checkDraw(0));
+		assertEquals(false, bdraw.checkWinner(0));
+		assertEquals(false, bdraw.checkWinner(1));
+		assertEquals(true, bdraw.checkDraw(0));
 	}
 
 	@Test
-	public void maxTurnsWinner()
-	{
+	public void maxTurnsWinner() {
+
 		Board bturnswin = new Board();
 
-		bturnswin.makeMove(0,"0,0");
-		bturnswin.makeMove(1,"0,1");
-		bturnswin.makeMove(0,"0,2");
-		bturnswin.makeMove(1,"1,0");
-		bturnswin.makeMove(0,"1,1");
-		bturnswin.makeMove(1,"1,2");
-		bturnswin.makeMove(0,"2,1");
-		bturnswin.makeMove(1,"2,2");
-		bturnswin.makeMove(0,"2,0");
+		bturnswin.makeMove(0, "0,0");
+		bturnswin.makeMove(1, "0,1");
+		bturnswin.makeMove(0, "0,2");
+		bturnswin.makeMove(1, "1,0");
+		bturnswin.makeMove(0, "1,1");
+		bturnswin.makeMove(1, "1,2");
+		bturnswin.makeMove(0, "2,1");
+		bturnswin.makeMove(1, "2,2");
+		bturnswin.makeMove(0, "2,0");
 
-		assertEquals(false,bturnswin.checkDraw(0));
-		assertEquals(true,bturnswin.checkWinner(0));
-		assertEquals(false,bturnswin.checkWinner(1));
+		assertEquals(false, bturnswin.checkDraw(0));
+		assertEquals(true, bturnswin.checkWinner(0));
+		assertEquals(false, bturnswin.checkWinner(1));
 	}
 	
 }	

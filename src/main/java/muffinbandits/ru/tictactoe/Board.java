@@ -19,9 +19,9 @@ public class Board {
 
 		turns = 0;
 
-    	for(int i = 0; i < ROWS; i++) {
+    	for (int i = 0; i < ROWS; i++) {
 
-      		for(int j = 0; j < COLUMS; j++) {
+      		for (int j = 0; j < COLUMS; j++) {
       			board[i][j] = Start;
       		}
   		}
@@ -48,41 +48,47 @@ public class Board {
 
 					board[tempX][tempY] = player;
 
-					if(turns == 9)
-					{
-						if(!checkDraw(player))
-						{
+					if (turns == 9) {
+
+						if (!checkDraw(player)) {
+
 							return "win,0";
-						}
-						else
-						{
+
+						} 
+						else {
+
 							return "draw,0";
 						}
-					}
-					else if (checkWinner(player))
-					{
+
+					} 
+					else if (checkWinner(player)) {
+
 						return "win,0";
 					}
 
 					//skila done og nyja playerId (1)
 					return "ok,0";
-				} else if (player == 1) {
+
+				} 
+				else if (player == 1) {
 					// System.out.println("player 1");
 					board[tempX][tempY] = player;
 
-					if(turns == 9)
-					{
-						if(!checkDraw(player))
-						{
+					if (turns == 9) {
+
+						if (!checkDraw(player)) {
+
 							return "win,1";
-						}
-						else
-						{
+
+						} 
+						else {
+
 							return "draw,1";
 						}
-					}
-					else if(checkWinner(player))
-					{
+
+					} 
+					else if (checkWinner(player)) {
+
 						return "win,1";
 					}
 					
@@ -90,16 +96,18 @@ public class Board {
 					return "ok,1";
 				}
 
-			} else {
+			} 
+			else {
 				//occupied skila false og sama playerId
 				return "no," + player;
-				}
+			}
 
-		} else {
+		} 
+		else {
 		//not legal player throw exception!
-			return "error";
-	}
-	return "foo";
+			return "Player Not allowed";
+		}
+	return "Unknown error";
 
 	}
 
@@ -137,37 +145,46 @@ public class Board {
 	public static boolean isLegal(int x) {
 
 		if (x > 2 || x < 0) {
+
 			return false;
 		} 
+
 		return true;
 	}
 
 	public static boolean isLegalPlayer(int p) {
 
 		if (p == 0 || p == 1) {
+
 			return true;
 		}
+
 		return false;
 	}
 
-	public static boolean checkWinner(int player)
-	{
-		if(board[0][0] == player && board[1][1] == player && board[2][2] == player || board[0][2] == player && board[1][1] == player && board[2][0] == player)
-		{
+	public static boolean checkWinner(int player) {
+
+		if (board[0][0] == player && board[1][1] == player 
+			&& board[2][2] == player || board[0][2] == player 
+			&& board[1][1] == player && board[2][0] == player) {
+
 			return true;
-		}
-		else
-		{
-			for(int i = 0; i < ROWS ; i++)
-			{
-				for(int j = 0; j < COLUMS ; j++)
-				{
-					if(board[i][0] == player && board[i][1] == player && board[i][2] == player)
-					{
+		} 
+		else {
+
+			for (int i = 0; i < ROWS; i++) {
+
+				for (int j = 0; j < COLUMS; j++) {
+
+					if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+
 						return true;
-					}
-					else if(board[0][j] == player && board[1][j] == player && board[2][j] == player)
-					{
+
+					} 
+					else if (board[0][j] == player 
+						&& board[1][j] == player 
+						&& board[2][j] == player) {
+
 						return true;
 					}
 				}
@@ -177,14 +194,14 @@ public class Board {
 		return false;
 	}
 
-	public static boolean checkDraw(int player)
-	{
-		if(turns == 9 && !(checkWinner(player)))
-		{
+	public static boolean checkDraw(int player) {
+
+		if (turns == 9 && !(checkWinner(player))) {
+
 			return true;
 		}
+
 		return false;
 	}
-
 
 }
