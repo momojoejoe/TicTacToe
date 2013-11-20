@@ -4,6 +4,8 @@ Travis Test status: [![Build Status](https://travis-ci.org/MuffinBandits/TicTacT
 
 Heroku link: http://muffinbandits.herokuapp.com/
 
+Travis link: https://travis-ci.org/MuffinBandits/TicTacToe/
+
 Late-term Assignment
 
 Authors:
