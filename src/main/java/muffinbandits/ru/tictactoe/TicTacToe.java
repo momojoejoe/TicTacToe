@@ -22,11 +22,15 @@ public class TicTacToe {
 
     staticFileLocation("/public");
         
-        //setPort(Integer.valueOf(System.getenv("PORT"))); // broken!
+         // broken!
 
         if(System.getenv("PORT") == null)
         {
             setPort(4567);
+        }
+        else
+        {
+            setPort(Integer.valueOf(System.getenv("PORT")));
         }
 
         post(new Route("/add") {
