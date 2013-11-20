@@ -17,11 +17,13 @@ import org.junit.Test;
  */
 public class BoardTest {
 
+
 	/**
 	 * Checks if coordinate is legal.
 	 */
 	@Test
 	public void testisLegal() {
+
 
 		assertEquals(true, Board.isLegal(2));
 		assertEquals(false, Board.isLegal(-2));

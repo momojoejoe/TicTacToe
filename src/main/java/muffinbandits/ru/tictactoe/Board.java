@@ -20,18 +20,22 @@ public class Board {
 	/**
 	 * The board.
 	 */
-	public static final int[][] board = new int[ROWS][COLUMS];
+	public static final int[][] BOARD = new int[ROWS][COLUMS];
 	/**
 	 * The board starting value.
 	 */
-	public static final int Start = 2;
+	public static final int START = 2;
+	/**
+	 * Maximum turns.
+	 */
+	public static final int MAXTURN = 9;
 	/**
 	 * Player ID.
 	 */
 	public static int player = 0;
 
-	private static int X = 0;
-	private static int Y = 0;
+	private static int x = 0;
+	private static int y = 0;
 	private static int turns = 0;
 	private static int boardId =  0;
 
@@ -49,7 +53,7 @@ public class Board {
     	for (int i = 0; i < ROWS; i++) {
 
       		for (int j = 0; j < COLUMS; j++) {
-      			board[i][j] = Start;
+      			BOARD[i][j] = START;
       		}
   		}
 	}
@@ -75,15 +79,15 @@ public class Board {
 		 */
 		if (isLegalPlayer(player)) {
 
-			if (board[tempX][tempY] == Start) {
+			if (BOARD[tempX][tempY] == START) {
 				turns++;
 
 
 				if (player == 0) {
 
-					board[tempX][tempY] = player;
+					BOARD[tempX][tempY] = player;
 
-					if (turns == 9) {
+					if (turns == MAXTURN) {
 
 						if (!checkDraw(player)) {
 
@@ -106,9 +110,9 @@ public class Board {
 				} 
 				else if (player == 1) {
 
-					board[tempX][tempY] = player;
+					BOARD[tempX][tempY] = player;
 
-					if (turns == 9) {
+					if (turns == MAXTURN) {
 
 						if (!checkDraw(player)) {
 
@@ -152,9 +156,9 @@ public class Board {
 
 		String[] a = cellId.split(",");
 
-		X = Integer.parseInt(a[0]);
+		x = Integer.parseInt(a[0]);
 
-		if (!isLegal(X)) {
+		if (!isLegal(x)) {
 			throw new IllegalArgumentException("X cord not allowed");
 		}
 		
@@ -168,9 +172,9 @@ public class Board {
 
 		String[] a = cellId.split(",");
 
-		Y = Integer.parseInt(a[1]);
+		y = Integer.parseInt(a[1]);
 
-		if (!isLegal(Y)) {
+		if (!isLegal(y)) {
 			throw new IllegalArgumentException("Y cord not allowed");
 		}
 
@@ -181,7 +185,7 @@ public class Board {
 	 * @return x coordinate.
 	 */
 	public static int getXcord() {
-		return X;
+		return x;
 	}
 
 	/**
@@ -189,17 +193,17 @@ public class Board {
 	 * @return y coordinate.
 	 */
 	public static int getYcord() {
-		return Y;
+		return y;
 	}
 
 	/**
 	 * Checks if  coordinate is legal.
-	 * @param  x the  coordinate.
+	 * @param  cord the  coordinate.
 	 * @return   true if it's legal else false.
 	 */
-	public static boolean isLegal(int x) {
+	public static boolean isLegal(int cord) {
 
-		if (x > 2 || x < 0) {
+		if (cord > 2 || cord < 0) {
 
 			return false;
 		} 
@@ -232,9 +236,9 @@ public class Board {
 		/**
 		 * Checks the diagonal line.
 		 */
-		if (board[0][0] == player && board[1][1] == player 
-			&& board[2][2] == player || board[0][2] == player 
-			&& board[1][1] == player && board[2][0] == player) {
+		if (BOARD[0][0] == player && BOARD[1][1] == player 
+			&& BOARD[2][2] == player || BOARD[0][2] == player 
+			&& BOARD[1][1] == player && BOARD[2][0] == player) {
 
 			return true;
 		} 
@@ -247,14 +251,14 @@ public class Board {
 
 				for (int j = 0; j < COLUMS; j++) {
 
-					if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+					if (BOARD[i][0] == player && BOARD[i][1] == player && BOARD[i][2] == player) {
 
 						return true;
 
 					} 
-					else if (board[0][j] == player 
-						&& board[1][j] == player 
-						&& board[2][j] == player) {
+					else if (BOARD[0][j] == player 
+						&& BOARD[1][j] == player 
+						&& BOARD[2][j] == player) {
 
 						return true;
 					}
@@ -272,7 +276,7 @@ public class Board {
 	 */
 	public static boolean checkDraw(int player) {
 
-		if (turns == 9 && !(checkWinner(player))) {
+		if (turns == MAXTURN && !(checkWinner(player))) {
 
 			return true;
 		}

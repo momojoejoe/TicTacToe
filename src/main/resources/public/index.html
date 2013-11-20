@@ -31,7 +31,7 @@
     margin-left: 16px;
   }
   #p2 {
-    margin-left:107px;
+    margin-left:220px;
   }
   #gameover {
     display:none;
@@ -55,6 +55,9 @@
   #playay {
     margin-left: 182px;
   }
+  #turn {
+    display :none;
+  }
 </style>
 
   </head>
@@ -62,7 +65,7 @@
 
     <div class="container">
       <div id="gameover">
-      <div id="winner-name"></div><input type="button" value="Play again!" id="playay"onClick="window.location.reload()"></div>
+      <div id="winner-name"></div><input type="button" class="btn btn-default" value="Play again!" id="playay"onClick="window.location.reload()"></div>
 
       <h1>Welcome!</h1>
       <span id="p1"></span><span id="p2"></span>
@@ -191,14 +194,14 @@
               //teikna X
               $(cell).html("X");
               console.log(r[1]);
-              player.html("1");
+ 
               console.log("winner is " + a);
               $("#winner-name").html("Winner is <br>" + a);
 
             } else if (r[1] === '1') {
               //teikna O
               $(cell).html("O");
-              player.html("0");
+
               console.log("winner is " + b);
               $("#winner-name").html("Winner is <br>" + b);
 
