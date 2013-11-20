@@ -18,6 +18,7 @@ public class Board {
 	public static void makeBoard() {
 
 
+		turns = 0;
 
     	for(int i = 0; i < ROWS; i++) {
 
@@ -38,17 +39,19 @@ public class Board {
 
 		player = playerId;
 
-		if (isLegalPlayer(player)) {
+		if (isLegalPlayer(playerId)) {
 
 			if (board[tempX][tempY] == Start) {
 				turns++;
+				System.out.println(turns);
 
 				if (player == 0) {
+					// System.out.println("player 0");
 					
-					board[tempX][tempY] = 0;
+					board[tempX][tempY] = playerId;
 					if(turns == 9)
 					{
-						if(checkwinner(0))
+						if(checkwinner(playerId))
 						{
 							return "win,0";
 						}
@@ -57,19 +60,19 @@ public class Board {
 							return "draw,0";
 						}
 					}
-					else if (checkwinner(0))
+					else if (checkwinner(playerId))
 					{
 						return "win,0";
 					}
 
 					//skila done og nyja playerId (1)
 					return "ok,0";
-				} else if (player == 1) {
-
-					board[tempX][tempY] = 1;
+				} else if (playerId == 1) {
+					// System.out.println("player 1");
+					board[tempX][tempY] = playerId;
 					if(turns == 9)
 					{
-						if(checkwinner(1))
+						if(checkwinner(playerId))
 						{
 							return "win,1";
 						}
@@ -78,7 +81,7 @@ public class Board {
 							return "draw,1";
 						}
 					}
-					else if(checkwinner(1))
+					else if(checkwinner(playerId))
 					{
 						return "win,1";
 					}

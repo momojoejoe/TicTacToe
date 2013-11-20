@@ -29,12 +29,31 @@
   #p2 {
     margin-left:107px;
   }
+  #gameover {
+    display:none;
+    background-color: black;
+    width: 465px;
+    height: 625px;
+    position: absolute;
+    margin-top: 38px;
+    opacity: 0.8;
+    border-radius: 10px;
+    margin-left: -17px;
+  }
+
+  #winner-name {
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 286px;
+  }
 </style>
 
   </head>
   <body>
 
     <div class="container">
+      <div id="gameover"><div id="winner-name"></div></div>
       <h1>Welcome!</h1>
       <span id="p1"></span><span id="p2"></span>
 
@@ -87,11 +106,13 @@
     <!-- use ajax to submit form, retreive the result and display on the page -->
     <script>
     $(document).ready(function() {
+      var a;
+      var b;
       $('#board').hide();
       var form = $('form');
       form.submit(function(e) {
-        var a = $("#a").val();
-        var b = $("#b").val();
+        a = $("#a").val();
+        b = $("#b").val();
         $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
@@ -147,22 +168,39 @@
           } else if (r[0] === 'no') {
             //do again
             player.html($("#turn").html());
+
           } else if (r[0] === 'win') {
+            
             //skrifa sigurvegara
             if(r[1] === '0') {
               //teikna X
               $(cell).html("X");
               console.log(r[1]);
               player.html("1");
+              console.log("winner is " + a);
+              $("#winner-name").html("Winner is <br>" + a);
 
             } else if (r[1] === '1') {
               //teikna O
               $(cell).html("O");
               player.html("0");
+              console.log("winner is " + b);
+              $("#winner-name").html("Winner is <br>" + b);
 
             }
             console.log("winner is " + r[1]);
+            $("#gameover").show();
 
+          }else if (r[0] === 'draw' ) {
+
+            if (r[1] == '1') {
+              $(cell).html("O");
+            } else {
+              $(cell).html("X");
+            }
+
+            $("#winner-name").html("DRAW!");
+            $("#gameover").show();
           } else {
             console.log("unknown error");
             
