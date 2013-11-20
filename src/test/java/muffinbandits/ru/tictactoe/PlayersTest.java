@@ -4,14 +4,22 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Created by: arni11, bjarnthor12, sigruns12, sindris12, sindri12, theodor11 & thordurt12
+ * Copyright (c) 2013
+ * Project: TicTacToe
+ * Package: muffinbandits.ru.tictactoe
+ * Date: 19/11/13
+ */
+
+/**
+ * Tests the Player class.
+ */
 public class PlayersTest {
 
-	@Test
-	public void greetResultsInPlayers() {
-		Players p = new Players();
-		assertEquals("Hello sir", p.greet());
-	}
-
+	/**
+	 * Test player ID.
+	 */
 	@Test
 	public void testPlayerId() {
 		Players p1 = new Players();
@@ -19,6 +27,9 @@ public class PlayersTest {
 		assertEquals(2, p1.getPlayerId());
 	}
 
+	/**
+	 * Test player name.
+	 */
 	@Test
 	public void testPlayerName() {
 		Players p1 = new Players();

@@ -4,16 +4,32 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Created by: arni11, bjarnthor12, sigruns12, sindris12, sindri12, theodor11 & thordurt12
+ * Copyright (c) 2013
+ * Project: TicTacToe
+ * Package: muffinbandits.ru.tictactoe
+ * Date: 19/11/13
+ */
+
+/**
+ * Tests for the Board class.
+ */
 public class BoardTest {
 
+	/**
+	 * Checks if coordinate is legal.
+	 */
 	@Test
 	public void testisLegal() {
 
 		assertEquals(true, Board.isLegal(2));
 		assertEquals(false, Board.isLegal(-2));
-		// assertEquals(false, checkIfLegalMove(0,3));
 	}
 
+	/**
+	 * Check if set and get coordinates are legal.
+	 */
 	@Test
 	public void testCord() {
 
@@ -26,7 +42,9 @@ public class BoardTest {
 
 	}
 
-	//testa exception
+	/**
+	 * Tests exceptions.
+	 */
 	@Test(expected = Exception.class)
 	public void testCordExcept() {
 
@@ -44,6 +62,9 @@ public class BoardTest {
 		assertEquals(0, b1.getYcord());
 	}
 
+	/**
+	 * Check if player ID is legal.
+	 */
 	@Test
 	public void testLegalPlayer() {
 		assertEquals(true, Board.isLegalPlayer(1));
@@ -52,6 +73,9 @@ public class BoardTest {
 		assertEquals(false, Board.isLegalPlayer(-1));
 	}
 
+	/**
+	 * Checks all winning scenarios for player1.
+	 */
 	@Test
 	public void testWinnerP1() {
 		Board b3 = new Board();
@@ -127,6 +151,9 @@ public class BoardTest {
 		
 	}
 
+	/**
+	 * Checks all winning scenarios for player2.
+	 */
 	@Test
 	public void testWinnerP2() {
 		Board b31 = new Board();
@@ -210,6 +237,9 @@ public class BoardTest {
 		
 	}
 
+	/**
+	 * Checks if there is a draw.
+	 */
 	@Test
 	public void drawTest() {
 
@@ -230,6 +260,9 @@ public class BoardTest {
 		assertEquals(true, bdraw.checkDraw(0));
 	}
 
+	/**
+	 * Checks if winner after max turns.
+	 */
 	@Test
 	public void maxTurnsWinner() {
 
