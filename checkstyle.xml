@@ -76,5 +76,5 @@
   <module name="FileLength"/>
   <module name="FileTabCharacter">
     <property name="fileExtensions" value="*.java"/>
-  </module> -->
+  </module>
 </module>
