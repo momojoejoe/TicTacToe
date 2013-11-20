@@ -37,7 +37,7 @@ public class TicTacToe {
             @Override
             public Object handle(Request request, Response response) {
             	Board b1 = new Board();
-            	b.makeBoard();
+
                 String a = String.valueOf(request.queryParams("a"));
                 String b = String.valueOf(request.queryParams("b"));
 

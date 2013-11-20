@@ -135,76 +135,78 @@ public class BoardTest {
 		b31.makeMove(1,"1,1");
 		b31.makeMove(1,"2,2");
 
-		assertEquals(true, b31.checkwinner(0));
 
-	// 	b31.makeMove(1,"0,0");
-	// 	b31.makeMove(1,"1,1");
-	// 	b31.makeMove(1,"2,2");
 
-		
-	
-	// 	Board b41 = new Board();
-
-	// 	b41.makeMove(1,"0,2");		
-	// 	b41.makeMove(1,"1,1");
-	// 	b41.makeMove(1,"2,0");
-
-		
-
-	// 	Board b51 = new Board();
-
-	// 	b51.makeMove(1,"0,0");		
-	// 	b51.makeMove(1,"1,0");
-	// 	b51.makeMove(1,"2,0");
-
-		
-
-	// 	Board b61 = new Board();
-
-	// 	b61.makeMove(1,"0,1");		
-	// 	b61.makeMove(1,"1,1");
-	// 	b61.makeMove(1,"2,1");
+		b31.makeMove(1,"0,0");
+		b31.makeMove(1,"1,1");
+		b31.makeMove(1,"2,2");
 
 		
 	
-	// 	Board b71 = new Board();
+		Board b41 = new Board();
 
-	// 	b71.makeMove(1,"0,2");		
-	// 	b71.makeMove(1,"1,2");
-	// 	b71.makeMove(1,"2,2");
-
-		
-		
-	// 	Board b81 = new Board();
-
-	// 	b81.makeMove(1,"0,0");		
-	// 	b81.makeMove(1,"0,1");
-	// 	b81.makeMove(1,"0,2");
+		b41.makeMove(1,"0,2");		
+		b41.makeMove(1,"1,1");
+		b41.makeMove(1,"2,0");
 
 		
 
-	// 	Board b91 = new Board();
+		Board b51 = new Board();
 
-	// 	b91.makeMove(1,"1,0");		
-	// 	b91.makeMove(1,"1,1");
-	// 	b91.makeMove(1,"1,2");
+		b51.makeMove(1,"0,0");		
+		b51.makeMove(1,"1,0");
+		b51.makeMove(1,"2,0");
 
 		
 
-	// 	Board b101 = new Board();
+		Board b61 = new Board();
 
-	// 	b101.makeMove(1,"2,0");		
-	// 	b101.makeMove(1,"2,1");
-	// 	b101.makeMove(1,"2,2");
+		b61.makeMove(1,"0,1");		
+		b61.makeMove(1,"1,1");
+		b61.makeMove(1,"2,1");
 
-	// 	assertEquals(true, b31.checkwinner(1));
-	// 	assertEquals(true, b41.checkwinner(1));
-	// 	assertEquals(true, b51.checkwinner(1));
-	// 	assertEquals(true, b61.checkwinner(1));
-	// 	assertEquals(true, b71.checkwinner(1));
-	// 	assertEquals(true, b81.checkwinner(1));
-	// 	assertEquals(true, b91.checkwinner(1));
-	// 	assertEquals(true, b101.checkwinner(1));
+		
+	
+		Board b71 = new Board();
+
+		b71.makeMove(1,"0,2");		
+		b71.makeMove(1,"1,2");
+		b71.makeMove(1,"2,2");
+
+		
+		
+		Board b81 = new Board();
+
+		b81.makeMove(1,"0,0");		
+		b81.makeMove(1,"0,1");
+		b81.makeMove(1,"0,2");
+
+		
+
+		Board b91 = new Board();
+
+		b91.makeMove(1,"1,0");		
+		b91.makeMove(1,"1,1");
+		b91.makeMove(1,"1,2");
+
+		
+
+		Board b101 = new Board();
+
+		b101.makeMove(1,"2,0");		
+		b101.makeMove(1,"2,1");
+		b101.makeMove(1,"2,2");
+
+		
+
+		assertEquals(true, b31.checkwinner(1));
+		assertEquals(true, b41.checkwinner(1));
+		assertEquals(true, b51.checkwinner(1));
+		assertEquals(true, b61.checkwinner(1));
+		assertEquals(true, b71.checkwinner(1));
+		assertEquals(true, b81.checkwinner(1));
+		assertEquals(true, b91.checkwinner(1));
+		assertEquals(true, b101.checkwinner(1));
 		
 	}
 

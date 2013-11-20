@@ -15,10 +15,8 @@ public class Board {
 
 
 
-	public static void makeBoard() {
+	public Board() {
 
-		System.out.println("NEW GAME!");
-		
 		turns = 0;
 
     	for(int i = 0; i < ROWS; i++) {
@@ -44,14 +42,12 @@ public class Board {
 
 			if (board[tempX][tempY] == Start) {
 				turns++;
-				System.out.println("Turn nr :" + turns);
 
-				System.out.println("Player nr: " + player);
 
 				if (player == 0) {
-					// System.out.println("player 0");
-					
+
 					board[tempX][tempY] = player;
+
 					if(turns == 9)
 					{
 						if(checkwinner(player))
@@ -73,6 +69,7 @@ public class Board {
 				} else if (player == 1) {
 					// System.out.println("player 1");
 					board[tempX][tempY] = player;
+
 					if(turns == 9)
 					{
 						if(checkwinner(player))
