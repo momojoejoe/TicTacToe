@@ -94,6 +94,17 @@
       </plugin>
 
 
+            <!--  Support Javadoc. -->
+      <!--  More info:  http://maven.apache.org/plugins/maven-javadoc-plugin/usage.html -->      
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+        </configuration>
+      </plugin>
+      
+
     </plugins>
   </build>
 	<reporting>
