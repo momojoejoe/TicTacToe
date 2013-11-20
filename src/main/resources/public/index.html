@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello world</title>
+    <title>TicTacToe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- load bootstrap for nicer ui -->
@@ -37,9 +37,9 @@
     display:none;
     background-color: black;
     width: 465px;
-    height: 625px;
+    height: 644px;
     position: absolute;
-    margin-top: 38px;
+    margin-top: 16px;
     opacity: 0.8;
     border-radius: 10px;
     margin-left: -17px;
@@ -49,7 +49,7 @@
     color: white;
     font-size: 55px;
     text-align: center;
-    margin-top: 286px;
+    margin-top: 200px;
   }
 
   #playay {
@@ -118,6 +118,7 @@
     $(document).ready(function() {
       var a;
       var b;
+      $("#p1").css("background-color", "red");
       $('#board').hide();
       var form = $('form');
       form.submit(function(e) {
@@ -133,7 +134,7 @@
             //senda  a /newgame og byrja leik
             $('#board').show();
             $('#theForm').hide();
-            $('.container h1').html('Enjoy');
+            $('.container h1').html('Lets play!');
             $('#p1').html("Player1: <strong>" + a + "</strong>");
             $('#p2').html("Player2: <strong>" + b + "</strong>");
           } 
@@ -164,14 +165,18 @@
 
             if(r[1] === '0') {
               //teikna X
+              $("#p2").css("background-color", "red");
               $(cell).html("X");
               console.log(r[1]);
               player.html("1");
+              $("#p1").css("background-color", "white");
 
             } else if (r[1] === '1') {
               //teikna O
+              $("#p1").css("background-color", "red");
               $(cell).html("O");
               player.html("0");
+              $("#p2").css("background-color", "white");
 
             }
 
