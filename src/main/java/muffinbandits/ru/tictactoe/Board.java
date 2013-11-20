@@ -50,7 +50,7 @@ public class Board {
 
 					if(turns == 9)
 					{
-						if(checkwinner(player))
+						if(!checkDraw(player))
 						{
 							return "win,0";
 						}
@@ -59,7 +59,7 @@ public class Board {
 							return "draw,0";
 						}
 					}
-					else if (checkwinner(player))
+					else if (checkWinner(player))
 					{
 						return "win,0";
 					}
@@ -72,7 +72,7 @@ public class Board {
 
 					if(turns == 9)
 					{
-						if(checkwinner(player))
+						if(!checkDraw(player))
 						{
 							return "win,1";
 						}
@@ -81,7 +81,7 @@ public class Board {
 							return "draw,1";
 						}
 					}
-					else if(checkwinner(player))
+					else if(checkWinner(player))
 					{
 						return "win,1";
 					}
@@ -150,7 +150,7 @@ public class Board {
 		return false;
 	}
 
-	public static boolean checkwinner(int player)
+	public static boolean checkWinner(int player)
 	{
 		if(board[0][0] == player && board[1][1] == player && board[2][2] == player || board[0][2] == player && board[1][1] == player && board[2][0] == player)
 		{
@@ -174,6 +174,15 @@ public class Board {
 			}
 		}
 		
+		return false;
+	}
+
+	public static boolean checkDraw(int player)
+	{
+		if(turns == 9 && !(checkWinner(player)))
+		{
+			return true;
+		}
 		return false;
 	}
 

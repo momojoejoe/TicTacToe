@@ -116,14 +116,14 @@ public class BoardTest {
 		b10.makeMove(0,"2,1");
 		b10.makeMove(0,"2,2");
 
-		assertEquals(true, b3.checkwinner(0));
-		assertEquals(true, b4.checkwinner(0));
-		assertEquals(true, b5.checkwinner(0));
-		assertEquals(true, b6.checkwinner(0));
-		assertEquals(true, b7.checkwinner(0));
-		assertEquals(true, b8.checkwinner(0));
-		assertEquals(true, b9.checkwinner(0));
-		assertEquals(true, b10.checkwinner(0));
+		assertEquals(true, b3.checkWinner(0));
+		assertEquals(true, b4.checkWinner(0));
+		assertEquals(true, b5.checkWinner(0));
+		assertEquals(true, b6.checkWinner(0));
+		assertEquals(true, b7.checkWinner(0));
+		assertEquals(true, b8.checkWinner(0));
+		assertEquals(true, b9.checkWinner(0));
+		assertEquals(true, b10.checkWinner(0));
 		
 	}
 
@@ -199,15 +199,33 @@ public class BoardTest {
 
 		
 
-		assertEquals(true, b31.checkwinner(1));
-		assertEquals(true, b41.checkwinner(1));
-		assertEquals(true, b51.checkwinner(1));
-		assertEquals(true, b61.checkwinner(1));
-		assertEquals(true, b71.checkwinner(1));
-		assertEquals(true, b81.checkwinner(1));
-		assertEquals(true, b91.checkwinner(1));
-		assertEquals(true, b101.checkwinner(1));
+		assertEquals(true, b31.checkWinner(1));
+		assertEquals(true, b41.checkWinner(1));
+		assertEquals(true, b51.checkWinner(1));
+		assertEquals(true, b61.checkWinner(1));
+		assertEquals(true, b71.checkWinner(1));
+		assertEquals(true, b81.checkWinner(1));
+		assertEquals(true, b91.checkWinner(1));
+		assertEquals(true, b101.checkWinner(1));
 		
+	}
+
+	@Test
+	public void drawTest()
+	{
+		Board bdraw = new Board();
+
+		bdraw.makeMove(0,"0,0");
+		bdraw.makeMove(1,"0,1");
+		bdraw.makeMove(0,"0,2");
+		bdraw.makeMove(1,"1,0");
+		bdraw.makeMove(0,"1,2");
+		bdraw.makeMove(1,"2,2");
+		bdraw.makeMove(0,"2,0");
+		bdraw.makeMove(1,"1,1");
+		bdraw.makeMove(0,"2,1");
+
+		assertEquals(true,bdraw.checkDraw(0));
 	}
 
 	
