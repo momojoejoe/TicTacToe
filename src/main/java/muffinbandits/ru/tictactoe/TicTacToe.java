@@ -15,6 +15,10 @@ import spark.*;
  */
 public class TicTacToe {
 
+	/**
+     * The port number.
+     */
+	public static final int PORT = 4567;
     /**
      * Player 1.
      */
@@ -42,7 +46,7 @@ public class TicTacToe {
 
        	if (System.getenv("PORT") == null) {
 
-            setPort(4567);
+            setPort(PORT);
         }
         else {
 
