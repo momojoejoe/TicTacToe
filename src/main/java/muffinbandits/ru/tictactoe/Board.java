@@ -17,7 +17,8 @@ public class Board {
 
 	public static void makeBoard() {
 
-
+		System.out.println("NEW GAME!");
+		
 		turns = 0;
 
     	for(int i = 0; i < ROWS; i++) {
@@ -39,19 +40,21 @@ public class Board {
 
 		player = playerId;
 
-		if (isLegalPlayer(playerId)) {
+		if (isLegalPlayer(player)) {
 
 			if (board[tempX][tempY] == Start) {
 				turns++;
-				System.out.println(turns);
+				System.out.println("Turn nr :" + turns);
+
+				System.out.println("Player nr: " + player);
 
 				if (player == 0) {
 					// System.out.println("player 0");
 					
-					board[tempX][tempY] = playerId;
+					board[tempX][tempY] = player;
 					if(turns == 9)
 					{
-						if(checkwinner(playerId))
+						if(checkwinner(player))
 						{
 							return "win,0";
 						}
@@ -60,19 +63,19 @@ public class Board {
 							return "draw,0";
 						}
 					}
-					else if (checkwinner(playerId))
+					else if (checkwinner(player))
 					{
 						return "win,0";
 					}
 
 					//skila done og nyja playerId (1)
 					return "ok,0";
-				} else if (playerId == 1) {
+				} else if (player == 1) {
 					// System.out.println("player 1");
-					board[tempX][tempY] = playerId;
+					board[tempX][tempY] = player;
 					if(turns == 9)
 					{
-						if(checkwinner(playerId))
+						if(checkwinner(player))
 						{
 							return "win,1";
 						}
@@ -81,7 +84,7 @@ public class Board {
 							return "draw,1";
 						}
 					}
-					else if(checkwinner(playerId))
+					else if(checkwinner(player))
 					{
 						return "win,1";
 					}
@@ -92,7 +95,7 @@ public class Board {
 
 			} else {
 				//occupied skila false og sama playerId
-				return "no," + playerId;
+				return "no," + player;
 				}
 
 		} else {
