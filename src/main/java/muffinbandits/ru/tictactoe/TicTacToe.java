@@ -24,7 +24,7 @@ public class TicTacToe {
         
         //setPort(Integer.valueOf(System.getenv("PORT"))); // broken!
 
-        if(System.getenv("PORT")) == null)
+        if(System.getenv("PORT") == null)
         {
             setPort(4567);
         }
