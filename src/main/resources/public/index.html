@@ -47,13 +47,19 @@
     text-align: center;
     margin-top: 286px;
   }
+
+  #playay {
+    margin-left: 182px;
+  }
 </style>
 
   </head>
   <body>
 
     <div class="container">
-      <div id="gameover"><div id="winner-name"></div></div>
+      <div id="gameover">
+      <div id="winner-name"></div><input type="button" value="Play again!" id="playay"onClick="window.location.reload()"></div>
+
       <h1>Welcome!</h1>
       <span id="p1"></span><span id="p2"></span>
 
@@ -207,15 +213,13 @@
           }
 
 
-
-
         }).fail(function() {
           console.log("error");
         })
 
       });
 
-    });
+     });
     </script>
   </body>
 </html>
