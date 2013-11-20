@@ -68,6 +68,32 @@
           </execution>
         </executions>
       </plugin>
+
+
+      <!-- Define the checkstyle plugin: Runs automatically during verify phase. -->
+      <!-- Run separately with:  mvn checkstyle:check -->
+      <!-- More details: http://maven.apache.org/plugins/maven-checkstyle-plugin/checkstyle-mojo.html -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.9.1</version>
+        <executions>
+          <execution>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <configLocation>http://ics-software-engineering.googlecode.com/svn/trunk/configfiles/checkstyle.xml</configLocation>
+          <consoleOutput>true</consoleOutput>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <failsOnError>true</failsOnError>
+        </configuration>
+      </plugin>
+
+
     </plugins>
   </build>
 	<reporting>
@@ -84,6 +110,15 @@
                 </formats>
             </configuration>
         </plugin>
+
+      <!-- Provided to remove "[WARNING] Unable to locate Source XRef to link to - DISABLED" when running PMD. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+
+
     </plugins>
 </reporting>
   <dependencies>
