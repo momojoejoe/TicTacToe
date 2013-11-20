@@ -8,12 +8,29 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import java.util.regex.Pattern;
-import static org.apache.commons.lang3.StringUtils.join;
 
+
+/**
+ * Created by: arni11, bjarnthor12, sigruns12, sindris12, sindri12, theodor11 & thordurt12
+ * Copyright (c) 2013
+ * Project: TicTacToe
+ * Package: com.example.tests
+ * Date: 19/11/13
+ */
+
+/**
+ * Tests new game.
+ */
 public class NewGameTest {
+	/**
+	 * Selenium var.
+	 */
 	private Selenium selenium;
 
+	/**
+	 * Setup the selenium test.
+	 * @throws Exception throws exception.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
@@ -21,6 +38,10 @@ public class NewGameTest {
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
+	/**
+	 * Tests new game.
+	 * @throws Exception throws exception.
+	 */
 	@Test
 	public void testNewGame() throws Exception {
 		selenium.open("/");
@@ -40,6 +61,10 @@ public class NewGameTest {
 		selenium.click("0,2");
 	}
 
+	/**
+	 * Stops selenium.
+	 * @throws Exception throws exception.
+	 */
 	@After
 	public void tearDown() throws Exception {
 		selenium.stop();

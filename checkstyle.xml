@@ -9,7 +9,7 @@
     Description: none
 -->
 <module name="Checker">
- <!-- <property name="severity" value="warning"/>
+<property name="severity" value="warning"/>
   <module name="TreeWalker">
     <module name="JavadocMethod"/>
     <module name="JavadocType"/>
