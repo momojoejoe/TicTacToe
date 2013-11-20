@@ -225,8 +225,29 @@ public class BoardTest {
 		bdraw.makeMove(1,"1,1");
 		bdraw.makeMove(0,"2,1");
 
+		assertEquals(false,bdraw.checkWinner(0));
+		assertEquals(false,bdraw.checkWinner(1));
 		assertEquals(true,bdraw.checkDraw(0));
 	}
 
+	@Test
+	public void maxTurnsWinner()
+	{
+		Board bturnswin = new Board();
+
+		bturnswin.makeMove(0,"0,0");
+		bturnswin.makeMove(1,"0,1");
+		bturnswin.makeMove(0,"0,2");
+		bturnswin.makeMove(1,"1,0");
+		bturnswin.makeMove(0,"1,1");
+		bturnswin.makeMove(1,"1,2");
+		bturnswin.makeMove(0,"2,1");
+		bturnswin.makeMove(1,"2,2");
+		bturnswin.makeMove(0,"2,0");
+
+		assertEquals(false,bturnswin.checkDraw(0));
+		assertEquals(true,bturnswin.checkWinner(0));
+		assertEquals(false,bturnswin.checkWinner(1));
+	}
 	
 }	
