@@ -4,7 +4,7 @@ export STAGING_SERVER='http://muffinbandits.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
 if [ $? -eq 0 ]
   then
-    bin/success
+    bin/yes
   else
           bin/error
 fi
