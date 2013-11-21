@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import java.util.regex.Pattern;
 import static org.apache.commons.lang3.StringUtils.join;
 
-public class playerXWins8IT {
+public class PlayerXWins8IT {
 	private Selenium selenium;
 
 	@Before
