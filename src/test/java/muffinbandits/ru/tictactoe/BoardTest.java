@@ -285,6 +285,30 @@ public class BoardTest {
 		assertEquals(true, bdraw.checkDraw(0));
 	}
 
+
+	/**
+	 * Checks if there is a draw.
+	 */
+	@Test
+	public void drawTest1() {
+
+		Board bdraw = new Board();
+
+		bdraw.makeMove(1, "0,0");
+		bdraw.makeMove(0, "0,1");
+		bdraw.makeMove(1, "0,2");
+		bdraw.makeMove(0, "1,0");
+		bdraw.makeMove(1, "1,2");
+		bdraw.makeMove(0, "2,2");
+		bdraw.makeMove(1, "2,0");
+		bdraw.makeMove(0, "1,1");
+		bdraw.makeMove(1, "2,1");
+
+		assertEquals(false, bdraw.checkWinner(1));
+		assertEquals(false, bdraw.checkWinner(0));
+		assertEquals(true, bdraw.checkDraw(1));
+	}
+
 	/**
 	 * Checks if winner after max turns.
 	 */
@@ -307,5 +331,31 @@ public class BoardTest {
 		assertEquals(true, bturnswin.checkWinner(0));
 		assertEquals(false, bturnswin.checkWinner(1));
 	}
+
+
+	/**
+	 * Checks if winner after max turns.
+	 */
+	@Test
+	public void maxTurnsWinner2() {
+
+		Board bturnswin = new Board();
+
+		bturnswin.makeMove(1, "0,0");
+		bturnswin.makeMove(0, "0,1");
+		bturnswin.makeMove(1, "0,2");
+		bturnswin.makeMove(0, "1,0");
+		bturnswin.makeMove(1, "1,1");
+		bturnswin.makeMove(0, "1,2");
+		bturnswin.makeMove(1, "2,1");
+		bturnswin.makeMove(0, "2,2");
+		bturnswin.makeMove(1, "2,0");
+
+		assertEquals(false, bturnswin.checkDraw(1));
+		assertEquals(true, bturnswin.checkWinner(1));
+		assertEquals(false, bturnswin.checkWinner(0));
+	}
+
+	
 	
 }	
