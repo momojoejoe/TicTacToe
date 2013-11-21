@@ -5,7 +5,7 @@ gem install heroku
 # Add your Heroku git repo:
 git remote add heroku git@heroku.com:muffinbandits.git
 # Add your Heroku API key:
-#export HEROKU_API_KEY=8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
+export HEROKU_API_KEY=8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
 # Turn off warnings about SSH keys:
 echo "Host heroku.com" >> ~/.ssh/config
 echo "   StrictHostKeyChecking no" >> ~/.ssh/config
