@@ -11,8 +11,8 @@ install:
 - gem install selenium-webdriver
 deploy:
   provider: heroku
-  api_key: #8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
-    secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
+  api_key: 8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
+    #secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
   app:
     master: muffinbandits-staging
     production: muffinbandits
