@@ -38,6 +38,7 @@ public class NewGameTest {
 		WebDriver driver = new FirefoxDriver();
 		String baseUrl = System.getenv("STAGING_SERVER");
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+		selenium.start();
 	}
 
 	/**
