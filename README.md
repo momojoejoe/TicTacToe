@@ -30,69 +30,76 @@ The following programs are required for this project to run
 
 2.Apache-Maven 3.1.1
 
-3.Java JDK version 7 (Java JDK 1.7.025)
+3.Java JDK version 7
 
 Install information for platforms
 
-1. Windows:
-2. MacOS: 
+1. Windows
+2. OSX 
+3. Linux
 
-export JAVA_HOME=`/Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Ho$
 
-When installing Maven on OS X
-- First thing is to download Maven which is found at maven.apache.org/download.cgi , unpack at a safe location.
 
-First you want to check the JAVA update
+1. Windows 
+=====
+Missing.
 
-    javac -version
-    "Java is up to date"
 
-If your Java version is not up to date you need to download the Java version 7 JDK from http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-Set maven environment variables, add M2_HOME, M2, MAVEN_OPTS to environment variables.
+2. OSX
+====
 
-    -export M2_HOME=/usr/local/apache-maven/apache-maven-2.2.1
-    -export M2=%M2_HOME%\bin
-    -MAVEN_OPTS=-Xmx512m
+1. Install git.
+- Go to https://help.github.com/articles/set-up-git to setup Git.
 
-Add Maven bin directory location to system path
+1.1 Clone repo.
+    - Clone this repo to your machine:
+        git clone https://github.com/MuffinBandits/TicTacToe.git
 
-    -export PATH=$M2:$PATH
+2. Install Maven.
+-  Download Maven at http://maven.apache.org/download.cgi , unpack at a safe location.
 
-Now append M2 variable to System Path
-Verify Maven installation
 
-    mvn --version
+3. Make sure you have Java 7.
+- To check which java version you have type:
+        java -version
 
-and the output should be:
+If you don't have version 1.7_xx get  download Java version 7 JDK from http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
-    Apache Maven 3.1.1 (0728685237757ffbf44136acec0402957f723d9a; 2013-09-17 15:22:22+0000)
-    Maven home: /Users/sindri4ursuccess/Documents/apache-maven-3.1.1
-    Java version: 1.7.0_45, vendor: Oracle Corporation
-    Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_45.jdk/Contents/Home/jre
-    Default locale: en_US, platform encoding: UTF-8
-    OS name: "mac os x", version: "10.9", arch: "x86_64", family: "mac"
-		
-3. Linux:
+If you get java version "1.7_xx" you should be set. However Maven could still be using java version 1.6. To check that type: 
+        mvn -version
 
-For installation you need to type the following commands:
+If Maven is not using versin 1.7.* you need to add this line to your ~/.bash_profile file:
+        export JAVA_HOME="$(/usr/libexec/java_home)"    
 
-    sudo apt-get install git
-    sudo apt-get install maven
+To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
 
-Now that you have maven and git installed you can clone your repository
 
-    git clone https://github.com/MuffinBandits/TicTacToe/
+3. Linux 
+=====
 
-Our implementation comes prepared with scripts for building the project. You are required to be in your \TicTacToe folder
+1. Install git.
+    - Go to https://help.github.com/articles/set-up-git#platform-linux
 
-    bin/fresh
+1.1 Clone repo.
+    - Clone this repo to your machine:
+        git clone https://github.com/MuffinBandits/TicTacToe.git
 
-If the build fails your JAVA_HOME path is incorrect and you need to add this line to your ~/.bash_profile file: (if it does not exist, create it)
+2 and 3. Install Maven and Java 7.
 
-    export JAVA_HOME="\$(/usr/libexec/java_home)"
-    
-Your app now runs on your computer where Spark ignites, now you can open a tab on your browser and connect to localhost:4567
+    - To install maven and Java JDK 7 run this script.
+        bin/linux_setup
+
+To check if Java 7 is installed and in use:
+        java -version
+
+If you don't get version 1.7_xx this command lets you choose it:
+        sudo update-alternatives --config java
+        Select java 1.7_xx.
+
+
+To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
+
 
     
     
