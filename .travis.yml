@@ -3,7 +3,7 @@ jdk: openjdk7
 env:
   global:
   - secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
-  - secure: GXYrWy2/qrqHE3ULcS+kqOFsT02Swr4JlurNoukP3usywekmZQR0FTD6olx59tDFjNO3pEBbEXNxzJS+PC37vgPuLidy9PmrgyNtYGLFFr81WPoJGQG3aghnCCXzZCls7s3bVs+bw8vhdqGb1czi9vA16exqyQiUeSQgREubvXU=
+  - secure: HE5YeNk1Pb1tpmcCmxoyy/yjBIyfGXNBdSu8i5b4SUe2/Pxr0DAsPCiIM3tf6gNnwb3P0v55wLJ8ockGn+jeTLJ5JbBjEBTLTGX+KeZ5ZsXk1YyWJqIqgxmIvU+UAZoUHSrWPeJsIu0tcEwU67ym1MxA0dKXSd8LNoAA/yqQftM=
 notifications:
   email: false
 deploy:
