@@ -15,7 +15,7 @@ deploy:
     #secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
   app:
     master: muffinbandits-staging
-    production: muffinbandits
+    production: pure-earth-4099
   on:
     repo: MuffinBandits/TicTacToe
 
