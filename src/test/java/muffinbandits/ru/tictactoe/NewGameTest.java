@@ -1,4 +1,4 @@
-package com.example.tests;
+package muffinbandits.ru.tictactoe;
 
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;

@@ -33,18 +33,7 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.16</version>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>2.16</version>
-          </dependency>
-        </dependencies>
-      </plugin>
+     
       <!-- Define the checkstyle plugin: Runs automatically during verify phase. -->
       <!-- Run separately with:  mvn checkstyle:check -->
       <!-- More details: http://maven.apache.org/plugins/maven-checkstyle-plugin/checkstyle-mojo.html -->
@@ -136,13 +125,7 @@
                 <exclude>**/IT*.java</exclude>
             </excludes>
         </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.apache.maven.surefire</groupId>
-            <artifactId>surefire-junit47</artifactId>
-            <version>2.16</version>
-          </dependency>
-        </dependencies>
+  
       </plugin>
       <plugin>
         <!-- Failsafe plugin handles all tests except unit test -->
@@ -177,11 +160,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
         <version>2.3</version>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.16</version>
       </plugin>
     </plugins>
 
