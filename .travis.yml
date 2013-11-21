@@ -6,6 +6,14 @@ env:
 notifications:
   email: false
 before_install:
+- wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+- git remote add heroku git@heroku.com:muffinbandits-staging.git
+- echo "Host heroku.com" >> ~/.ssh/config
+- echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+- echo "   CheckHostIP no" >> ~/.ssh/config
+- echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+- yes | heroku keys:add
+- yes | git push -f heroku master
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile
@@ -14,21 +22,13 @@ install:
 - gem install selenium-webdriver
 deploy:
   provider: heroku
-  api_key: #8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
+  api_key: 
     secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
   app:
-    master: muffinbandits-staging
+    master: muffinbandits
   on:
     repo: MuffinBandits/TicTacToe
-after_success:
-  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-  - git remote add heroku git@heroku.com:muffinbandits.git
-  - echo "Host heroku.com" >> ~/.ssh/config
-  - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
-  - echo "   CheckHostIP no" >> ~/.ssh/config
-  - echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
-  - yes | heroku keys:add
-  - yes | git push -f heroku master
+
 script: 
 after_deploy:
 - sh bin/rainonme
