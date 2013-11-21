@@ -49,21 +49,18 @@ Missing.
 2. OSX
 ====
 
-1. Install git.
 - Go to https://help.github.com/articles/set-up-git to setup Git.
 
-1.1 Clone repo.
-    - Clone this repo to your machine:
+- Clone this repo to your machine:
     
     git clone https://github.com/MuffinBandits/TicTacToe.git
 
-2. Install Maven.
--  Download Maven at http://maven.apache.org/download.cgi , unpack at a safe location.
+
+- Download Maven at http://maven.apache.org/download.cgi , unpack at a safe location.
 
 
-3. Make sure you have Java 7.
-    - To check which java version you have type:
-                java -version
+- Make sure you have Java 7. To check which java version you have type:
+        java -version
 
 If you don't have version 1.7_xx get  download Java version 7 JDK from http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
@@ -75,22 +72,20 @@ If Maven is not using versin 1.7.* you need to add this line to your ~/.bash_pro
 
     export JAVA_HOME="$(/usr/libexec/java_home)"    
 
-To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
+- To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
 
 
 3. Linux 
 =====
 
-1. Install git.
-    - Go to https://help.github.com/articles/set-up-git#platform-linux
+- Go to https://help.github.com/articles/set-up-git#platform-linux
 
-1.1 Clone repo.
-    - Clone this repo to your machine:
+
+- Clone this repo to your machine:
         git clone https://github.com/MuffinBandits/TicTacToe.git
 
-2 and 3. Install Maven and Java 7.
 
-    - To install maven and Java JDK 7 run this script.
+- To install maven and Java JDK 7 run this script.
         bin/linux_setup
 
 To check if Java 7 is installed and in use:
@@ -102,7 +97,7 @@ If you don't get version 1.7_xx this command lets you choose it:
         Select java 1.7_xx.
 
 
-To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
+- To run this application simply run bin/fresh and navigate to http://localhost:4567 to play the game.
 
 
     
