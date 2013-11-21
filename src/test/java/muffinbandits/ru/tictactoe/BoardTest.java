@@ -45,23 +45,33 @@ public class BoardTest {
 	}
 
 	/**
-	 * Tests exceptions.
+	 * Tests Ycord exceptions.
 	 */
 	@Test(expected = Exception.class)
-	public void testCordExcept() {
+	public void testYCordExcept() {
 
-		Board b1 = new Board();
 		Board b2 = new Board();
+		
 
 		b2.setXcord("0,4");
 		b2.setYcord("0,4");
 		assertEquals(0, b2.getXcord());
 		assertEquals("Y cord not allowed", b2.getYcord());
 
+	}
+
+	/**
+	 * Tests Xcord exceptions.
+	 */
+	@Test(expected = Exception.class)
+	public void testXCordExcept() {
+
+		Board b1 = new Board();
+
 		b1.setXcord("3,0");
 		b1.setYcord("3,0");
-		assertEquals("X cord not allowed", b1.getXcord());
 		assertEquals(0, b1.getYcord());
+		assertEquals("X cord not allowed", b1.getXcord());
 	}
 
 	/**
@@ -73,7 +83,20 @@ public class BoardTest {
 		assertEquals(true, Board.isLegalPlayer(0));
 		assertEquals(false, Board.isLegalPlayer(2));
 		assertEquals(false, Board.isLegalPlayer(-1));
+		
 	}
+
+	/**
+	 * Check if player is legal in makeMove.
+	 */
+	@Test
+	public void testPlayerinMove() {
+
+		assertEquals("Player Not allowed", Board.makeMove(4, "0,1"));
+		assertEquals("Player Not allowed", Board.makeMove(3, "0,1"));
+		assertEquals("Player Not allowed", Board.makeMove(-2, "0,1"));
+	}
+
 
 	/**
 	 * Checks all winning scenarios for player1.

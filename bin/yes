@@ -1,0 +1,19 @@
+#!/bin/bash
+echo "-> The staging server test is a success <-" #TODO implement deploy to pruduction script
+# Install the Heroku gem (or the Heroku toolbelt)
+gem install heroku
+# Add your Heroku git repo:
+git remote add heroku git@heroku.com:muffinbandits.git
+# Add your Heroku API key:
+export HEROKU_API_KEY=8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
+# Turn off warnings about SSH keys:
+echo "Host heroku.com" >> ~/.ssh/config
+echo "   StrictHostKeyChecking no" >> ~/.ssh/config
+echo "   CheckHostIP no" >> ~/.ssh/config
+echo "   UserKnownHostsFile=/dev/null" >> ~/.ssh/config
+# Clear your current Heroku SSH keys:
+heroku keys:clear
+# Add a new SSH key to Heroku
+yes | heroku keys:add
+# Push to Heroku!
+yes | git push heroku master

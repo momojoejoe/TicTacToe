@@ -22,6 +22,7 @@ sindri12
 
 theodor11
 
+thordurt12
 
 The following programs are required for this project to run 
 

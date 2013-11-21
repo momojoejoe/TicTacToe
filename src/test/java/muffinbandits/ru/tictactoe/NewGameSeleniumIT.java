@@ -1,4 +1,4 @@
-package com.example.tests;
+package muffinbandits.ru.tictactoe;
 
 import com.thoughtworks.selenium.Selenium;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -8,20 +8,22 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.regex.Pattern;
+import static org.apache.commons.lang3.StringUtils.join;
 
 
 /**
  * Created by: arni11, bjarnthor12, sigruns12, sindris12, sindri12, theodor11 & thordurt12
  * Copyright (c) 2013
  * Project: TicTacToe
- * Package: com.example.tests
+ * Package: muffinbandits.ru.tictactoe
  * Date: 19/11/13
  */
 
 /**
  * Tests new game.
  */
-public class NewGameTest {
+public class NewGameSeleniumIT {
 	/**
 	 * Selenium var.
 	 */
@@ -34,7 +36,7 @@ public class NewGameTest {
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://muffinbandits.herokuapp.com/";
+		String baseUrl = System.getenv("STAGING_SERVER");
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
@@ -45,8 +47,9 @@ public class NewGameTest {
 	@Test
 	public void testNewGame() throws Exception {
 		selenium.open("/");
+		selenium.waitForPageToLoad("30000");
 		selenium.type("id=a", "BearThor");
-		selenium.type("id=b", "DeeBó");
+		selenium.type("id=b", "DeeBo");
 		selenium.click("css=button.btn.btn-default");
 		selenium.waitForPageToLoad("5000");
 		selenium.click("1,0");
