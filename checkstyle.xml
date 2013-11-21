@@ -9,7 +9,7 @@
     Description: none
 -->
 <module name="Checker">
-<property name="severity" value="warning"/>
+<!-- <property name="severity" value="warning"/>
   <module name="TreeWalker">
     <module name="JavadocMethod"/>
     <module name="JavadocType"/>
@@ -26,7 +26,7 @@
     <module name="ParameterName"/>
     <module name="StaticVariableName"/>
     <module name="TypeName"/>
-    <!-- <module name="AvoidStarImport"/> -->
+    <module name="AvoidStarImport"/>
     <module name="IllegalImport"/>
     <module name="RedundantImport"/>
     <module name="UnusedImports"/>
@@ -70,11 +70,11 @@
     <module name="TodoComment"/>
     <module name="UpperEll"/>
   </module>
-  <!-- <module name="JavadocPackage">
+  <module name="JavadocPackage">
     <property name="allowLegacy" value="true"/>
-  </module> -->
+  </module>
   <module name="FileLength"/>
   <module name="FileTabCharacter">
     <property name="fileExtensions" value="*.java"/>
   </module>
-</module>
+ --></module>

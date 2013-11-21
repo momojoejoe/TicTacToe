@@ -17,12 +17,12 @@ public class CreateNewGameIT {
 	@Before
 	public void setUp() throws Exception {
 		WebDriver driver = new FirefoxDriver();
-		String baseUrl = "http://muffinbandits.herokuapp.com/";
+		String baseUrl = System.getenv("STAGING_SERVER");
 		selenium = new WebDriverBackedSelenium(driver, baseUrl);
 	}
 
 	@Test
-	public void testCreate new game() throws Exception {
+	public void testCreatenewgame() throws Exception {
 		selenium.open("/");
 		selenium.type("id=a", "Player 1");
 		selenium.type("id=b", "Player 2");
