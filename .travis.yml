@@ -1,5 +1,8 @@
 language: java
 jdk: openjdk7
+env:
+  global:
+  - secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
 notifications:
   email: false
 before_install:
