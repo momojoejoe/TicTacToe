@@ -11,12 +11,12 @@ deploy:
   api_key: 
     secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
   app:
-    master: muffinbandits
+    master: muffinbandits-staging
   on:
     repo: MuffinBandits/TicTacToe
 before_install:
 - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
-- git remote add heroku git@heroku.com:muffinbandits-staging.git
+- git remote add heroku git@heroku.com:muffinbandits.git
 - echo "Host heroku.com" >> ~/.ssh/config
 - echo "   StrictHostKeyChecking no" >> ~/.ssh/config
 - echo "   CheckHostIP no" >> ~/.ssh/config
