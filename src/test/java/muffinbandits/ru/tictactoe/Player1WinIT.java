@@ -22,7 +22,7 @@ import static org.junit.Assert.*;
 /**
  * Tests new game.
  */
-public class Player1WinTestIT {
+public class Player1WinIT {
 	/**
 	 * Selenium var.
 	 */
