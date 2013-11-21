@@ -11,7 +11,7 @@ install:
 - gem install selenium-webdriver
 deploy:
   provider: heroku
-  api_key: 8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
+  api_key: #8ab442ab-f8d6-44a9-9da0-36eecdc7f2ad
     secure: E5QvUOV3cxeiINoG7GuMcDFP22NPhoxdanbiMumqWO+85VBqo8QT0nnC/oQHWJvuLQnt8wfle+Cv+zCZ26G+py3rGefzFmrkODl7LYXfaY7zDmgHRGnvrn++FYezjATSbdvfGr30EkWTEWSVkdqxCVIPW4CDjdRWxW/875uowjw=
   app: TicTacToe
   on:
