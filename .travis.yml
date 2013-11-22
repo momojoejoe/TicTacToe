@@ -31,7 +31,7 @@ install:
 - gem install selenium-webdriver
 
 script: 
-after_deploy:
+before_deploy:
 - sh bin/rainonme
 after_script:
 - sh -e /etc/init.d/xvfb stop
