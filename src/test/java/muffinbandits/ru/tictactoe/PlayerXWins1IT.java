@@ -59,17 +59,17 @@ public class PlayerXWins1IT {
 		verifyEquals("X", selenium.driver.findElement(By.id="0,0").getText()));
 		selenium.click("0,1");
 		Thread.sleep(1000);
-		// verifyEquals("O", selenium.getText("0,1"));
+		verifyEquals("O", selenium.driver.findElement(By.id="0,1").getText()));
 		selenium.click("1,0");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("1,0"));
+		verifyEquals("X", selenium.driver.findElement(By.id="1,0").getText()));
 		selenium.click("1,1");
 		Thread.sleep(1000);
-		// verifyEquals("O", selenium.getText("1,1"));
+		verifyEquals("O", selenium.driver.findElement(By.id="1,1").getText()));
 		selenium.click("2,0");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("2,0"));
-		// verifyEquals("Winner is Player 1", selenium.getText("winner-name"));
+		verifyEquals("X", selenium.driver.findElement(By.id="2,0").getText()));
+		verifyEquals("Winner is Player 1", selenium.driver.findElement(By.id="winner-name").getText()));
 		selenium.click("id=playay");
 		selenium.waitForPageToLoad("30000");
 	}
