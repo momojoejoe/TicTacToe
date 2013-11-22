@@ -5,7 +5,8 @@ env:
   - secure: Pa4hi6K70lVAQEobhKNyh0tW29jy7Kah6f2JIV0tD+3S0Kgr+aG67PjrHNEQsch6+wQGlcSZ7I3YbggN02LlGib30+CJcAmaC9a61mRkR0TgNEBJGebS2EJlGx656dJy1taIbXqpdGavUpZGa1HMiOd/ysOCHpkvVg/K5zNPDbw=
   - secure: SQiAWjQiGXzk24th2EAu6hgIo6qW7t0LJow7mv4mDodYhNl88UJD5igFZo6JwRHpkjRBAsl6kEn3vMDPIg+P7dxMj/OuPkThB5L4zASjQVrWTO2w4rj3GnFNhQhQBIDgvtrHpeaj+4JBSqyOHbh3ff2YXXgrJWUqYUetBqad1A4=
 notifications:
-  email: false
+  email:
+  	- arnifa@gmail.com
 deploy:
   provider: heroku
   api_key: 
