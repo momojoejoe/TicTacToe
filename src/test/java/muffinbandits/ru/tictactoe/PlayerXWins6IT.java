@@ -54,20 +54,21 @@ public class PlayerXWins6IT {
 
 		selenium.click("2,0");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("2,0"));
+		assertEquals("X", selenium.getText("2,0"));
 		selenium.click("1,0");
 		Thread.sleep(1000);
-		// verifyEquals("O", selenium.getText("1,0"));
+		assertEquals("O", selenium.getText("1,0"));
 		selenium.click("2,1");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("2,1"));
+		assertEquals("X", selenium.getText("2,1"));
 		selenium.click("1,1");
 		Thread.sleep(1000);
-		// verifyEquals("O", selenium.getText("1,1"));
+		assertEquals("O", selenium.getText("1,1"));
 		selenium.click("2,2");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("2,2"));
-		// verifyEquals("Winner is Player 1", selenium.getText("gameover"));
+		assertEquals("X", selenium.getText("2,2"));
+		Thread.sleep(1000);
+		assertEquals("Winner is Player 1", selenium.getText("gameover"));
 		selenium.click("id=playay");
 		selenium.waitForPageToLoad("30000");
 	}
