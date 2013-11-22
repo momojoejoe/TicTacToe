@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "---Running Selenium tests"
-export STAGING_SERVER='http://muffinbandits.herokuapp.com/'
+export STAGING_SERVER='http://muffinbandits-staging.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
 if [ $? -eq 0 ]
   then
