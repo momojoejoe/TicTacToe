@@ -7,6 +7,8 @@ Heroku link: http://muffinbandits.herokuapp.com/
 
 Travis link: https://travis-ci.org/MuffinBandits/TicTacToe/
 
+Twitter link: https://twitter.com/MuffinBanditsRU
+
 Late-term Assignment
 
 Authors:
