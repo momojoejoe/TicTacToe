@@ -1,0 +1,151 @@
+Design Report
+
+Design
+	
+		Classes
+				TicTacToe
+						Parameters
+								int PORT
+									The port number for the local host
+								Players p1
+								Players p2
+									Players in the game
+								Board b
+									Game board that belongs to current game.
+						Functions
+								main(String [] args)
+									Ignites the spark framework
+								
+								Object handle(Request request, Response response)
+									The game has started and names and id will be set
+								Object handle(Request request, Response response)
+									Handles the moves in the game
+				Players
+						Parameters
+								String name = “Player”
+									Default name of the player
+								int id
+						Functions
+								String getName()
+									Returns the name of the player
+								int getPlayerId()
+									Returns the player id
+								void setName(String pName)
+									Sets the name of the player
+								void setPlayerId(int pId)
+									Sets the player id
+				Board
+						Parameters
+								int ROWS = 3, COLUMNS = 3
+									Max values for the row and columns
+								int [] [] BOARD = new int [ROWS] [COLUMNS]
+									The game board
+								int START = 2
+									The boards starting value
+								int MAXTURN = 9
+									Maximum turns
+								int player
+									Player id
+								int x, y, turn, boardId
+						Functions
+								Board()
+									Constructor for the game board
+								String makeMove(int playerId, String cellId)
+									Takes care of putting the correct values into the board
+								void setXcord(String cellId)
+									Sets the X coordinate
+								void setYcord(String cellId)
+									Sets the Y coordinate
+								int getXcord()
+									Retrieves the X coordinate
+								int getYcord()
+									Retrieves the Y coordinate
+								boolean isLegal(int cord)
+									Checks if player has a valid id
+								boolean checkWinner(int player)
+									Checks if player has won the game
+								boolean checkDraw(int player)									Checks if the game is a draw
+		Test Classes
+			BoardTest
+						Functions
+							void testisLegal()
+								Checks if coordinate is legal
+							void testCord()
+								Checks if set and get coordinates are legal
+							void testYCordExcept()
+								Tests Y cord exceptions
+							void testXCordExcept()
+								Tests X cord exceptions
+							void testLegalPlayer()
+								Checks if player id is legal
+							void testPlayerinMove()
+								Checks if player is legal to make a move
+							void testWinnerP1()
+								Checks all winning scenarios for player1
+							void testWinner2()
+								Checks all winning scenarios for player2
+							void drawTest()
+								Checks if there is a draw in the instance of the game
+							void maxTurnsWinner()
+								Checks if player has won after max turns
+			
+			NewGameSeleniumIT
+						Parameters
+							Selenium selenium
+								A variable for selenium
+						Functions
+							void setUp()
+								Sets up the selenium test
+							void testNewGame()
+								Tests an instance of a new game
+							void tearDown()
+								Stops selenium
+			Player1WinIT
+						Parameters
+							Selenium selenium
+								A variable for selenium
+						Functions
+							void setUp()
+								Sets up the selenium test
+							testNewGame()
+								Tests an instance of a new game
+							void tearDown()
+								Stops selenium
+			Player2WinIT
+						Parameters
+							Selenium selenium
+								A variable for selenium
+						Functions
+							void setUp()
+								Sets up the selenium test
+							testNewGame()
+								Tests an instance of a new game
+							void tearDown()
+								Stops selenium
+			PlayersTest
+						Functions
+							void testPlayerId()
+								Tests the players id
+							void testPlayerName()
+								Tests the players name
+			PlayerTieIT
+						Parameters
+							Selenium selenium
+								A variable for selenium
+						Functions
+							void setUp()
+								Sets up the selenium test
+							void testNewGame()
+								Tests an instance of a new game
+							void tearDown()
+								Stops selenium
+		Development
+				//hér vantar
+		Servers
+				Travis
+				Heroku
+				//eitthvað fleira?
+		Testing
+				Unit Test
+				Selenium Test
+						
