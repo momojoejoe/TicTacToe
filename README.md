@@ -2,6 +2,8 @@ TicTacToe
 =========
 Travis Test status: [![Build Status](https://travis-ci.org/MuffinBandits/TicTacToe.png?branch=master)](https://travis-ci.org/MuffinBandits/TicTacToe.png?branch=master)
 
+Heroku staging link: http://muffinbandits-staging.herokuapp.com/
+
 Heroku link: http://muffinbandits.herokuapp.com/
 
 Travis link: https://travis-ci.org/MuffinBandits/TicTacToe/
