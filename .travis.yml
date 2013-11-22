@@ -6,7 +6,6 @@ env:
   - secure: SQiAWjQiGXzk24th2EAu6hgIo6qW7t0LJow7mv4mDodYhNl88UJD5igFZo6JwRHpkjRBAsl6kEn3vMDPIg+P7dxMj/OuPkThB5L4zASjQVrWTO2w4rj3GnFNhQhQBIDgvtrHpeaj+4JBSqyOHbh3ff2YXXgrJWUqYUetBqad1A4=
 notifications:
   email:
-  - develpermanuel@gmail.com
   - arnifa@gmail.com
 deploy:
   provider: heroku
