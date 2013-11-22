@@ -2,9 +2,3 @@
 echo "---Running Selenium tests"
 export STAGING_SERVER='http://muffinbandits-staging.herokuapp.com/'
 mvn test-compile failsafe:integration-test failsafe:verify
-if [ $? -eq 0 ]
-  then
-   #bin/yes
-  else
-          bin/error
-fi
