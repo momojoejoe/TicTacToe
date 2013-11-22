@@ -56,7 +56,7 @@ public class PlayerXWins1IT {
 
 		selenium.click("0,0");
 		Thread.sleep(1000);
-		// verifyEquals("X", selenium.getText("0,0"));
+		verifyEquals("X", selenium.driver.findElement(By.id="0,0").getText()));
 		selenium.click("0,1");
 		Thread.sleep(1000);
 		// verifyEquals("O", selenium.getText("0,1"));
