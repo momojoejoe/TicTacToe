@@ -21,7 +21,7 @@ public class TicTacToeTest {
 	 * Test TicTacToe.
 	 */
 	@Test
-    public void TestTicTacToe() {
+    public void testTicTacToe() {
 
 		TicTacToe tic = new TicTacToe();
 

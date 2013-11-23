@@ -53,7 +53,7 @@
           <configLocation>checkstyle.xml</configLocation>
           <consoleOutput>true</consoleOutput>
           <includeTestSourceDirectory>true</includeTestSourceDirectory>
-          <failsOnError>true</failsOnError>
+          <failsOnError>false</failsOnError>
         </configuration>
       </plugin>
 
