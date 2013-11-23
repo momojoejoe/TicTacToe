@@ -140,11 +140,19 @@ Design
 							void tearDown()
 								Stops selenium
 		Development
-				//hér vantar
+				VIM/sublime text2
+				Greencloud
+				Selenium IDE (firefox)
+
 		Servers
-				Travis
-				Heroku
-				//eitthvað fleira?
+				Automated Continuous Integration Server:
+					Travis
+				Focused integration:
+					Staging server:
+						http://muffinbandits-staging.herokuapp.com/
+					Production server:
+						http://muffinbandits.herokuapp.com/
+				
 		Testing
 				Unit Test
 				Selenium Test
