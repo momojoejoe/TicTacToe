@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#script to run selenium tests on machine with no gui 
+
+mvn clean
+mvn package
+java -jar target/TicTacToe-1.0-SNAPSHOT-jar-with-dependencies.jar &
+bin/selenium_test_xvfb
+pkill java
